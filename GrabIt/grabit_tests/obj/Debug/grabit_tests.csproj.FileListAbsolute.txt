@@ -1,6 +1,0 @@
-C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\grabit_tests\bin\Debug\WebTest1.webtest
-C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\grabit_tests\bin\Debug\grabit_tests.dll
-C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\grabit_tests\bin\Debug\grabit_tests.pdb
-C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\grabit_tests\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\grabit_tests\obj\Debug\grabit_tests.dll
-C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\grabit_tests\obj\Debug\grabit_tests.pdb

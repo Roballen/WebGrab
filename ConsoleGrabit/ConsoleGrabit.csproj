@@ -31,10 +31,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArtOfTest.Common, Version=2.0.7.0, Culture=neutral, PublicKeyToken=14a0200bfcbb7b62, processorArchitecture=MSIL" />
-    <Reference Include="ArtOfTest.InternetExplorer, Version=2.0.7.0, Culture=neutral, PublicKeyToken=5339893a7cefe4d6, processorArchitecture=MSIL" />
-    <Reference Include="ArtOfTest.WebAii, Version=2.0.7.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL" />
-    <Reference Include="ArtOfTest.WebAii.AspNet, Version=2.0.7.0, Culture=neutral, PublicKeyToken=787736db708a4086, processorArchitecture=MSIL" />
+    <Reference Include="ArtOfTest.Common, Version=2.0.7.0, Culture=neutral, PublicKeyToken=14a0200bfcbb7b62, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ArtOfTest.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.InternetExplorer, Version=2.0.7.0, Culture=neutral, PublicKeyToken=5339893a7cefe4d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ArtOfTest.InternetExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii, Version=2.0.7.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ArtOfTest.WebAii.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii.AspNet, Version=2.0.7.0, Culture=neutral, PublicKeyToken=787736db708a4086, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ArtOfTest.WebAii.AspNet.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll</HintPath>
@@ -54,10 +66,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baseAutomater.cs" />
+    <Compile Include="CountyRules.cs">
+      <DependentUpon>CountyRules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IWebsiteAutomater.cs" />
     <Compile Include="Lead.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="WebAutomaterFactory.cs" />
     <Compile Include="WebPostRequest.cs" />
+    <Compile Include="WebsiteAutomaters\BexarCounty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CountyRules.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CountyRules.xsd" />
+    <None Include="XMLSchema1.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
