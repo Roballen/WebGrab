@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Webconfigs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Config">
+          <xs:complexType>
+            <xs:attribute name="type" type="xs:string" use="required" />
+            <xs:attribute name="starttime" type="xs:time" use="required" />
+            <xs:attribute name="checksperday" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="username" type="xs:string" use="required" />
+            <xs:attribute name="password" type="xs:string" use="required" />
+            <xs:attribute name="priority" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
