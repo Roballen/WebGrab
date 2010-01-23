@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="FB151094-AFBB-40B5-A607-EF9CDA21C0DD" ModuleId="GrabIt" />
+  <Module PersistentId="6BC959AB-C2C1-4E15-B644-625DEBC9FA95" ModuleId="grabit_tests" />
+  <Module PersistentId="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D" ModuleId="ConsoleGrabit" />
+</Modules>

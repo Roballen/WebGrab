@@ -1,0 +1,6 @@
+C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\bin\Debug\ConsoleGrabit.exe
+C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\bin\Debug\ConsoleGrabit.pdb
+C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\obj\Debug\ConsoleGrabit.exe
+C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\obj\Debug\ConsoleGrabit.pdb
+C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\bin\Debug\ArtOfTest.WebAii.AspNet.dll

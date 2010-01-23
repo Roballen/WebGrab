@@ -1,0 +1,285 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="FB151094-AFBB-40B5-A607-EF9CDA21C0DD/f:App.xaml.cs" caret="0" fromTop="0" />
+      <File id="FB151094-AFBB-40B5-A607-EF9CDA21C0DD/f:Window1.xaml" caret="412" fromTop="6" />
+      <File id="FB151094-AFBB-40B5-A607-EF9CDA21C0DD/f:Window1.xaml.cs" caret="1115" fromTop="40" />
+      <File id="FB151094-AFBB-40B5-A607-EF9CDA21C0DD/f:IeDriver.cs" caret="1049" fromTop="13" />
+      <File id="6BC959AB-C2C1-4E15-B644-625DEBC9FA95/f:WebTest1Coded.cs" caret="2439" fromTop="32" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebPostRequest.cs" caret="754" fromTop="27" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Lead.cs" caret="429" fromTop="19" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="4226" fromTop="14" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="422" fromTop="5" />
+      <File id="6BC959AB-C2C1-4E15-B644-625DEBC9FA95/f:WebTest1Coded.cs" caret="1305" fromTop="14" />
+      <File id="6BC959AB-C2C1-4E15-B644-625DEBC9FA95/f:WebTest1Coded.cs" caret="2406" fromTop="30" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="6448" fromTop="34" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="845" fromTop="15" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="845" fromTop="17" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebPostRequest.cs" caret="372" fromTop="13" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebPostRequest.cs" caret="576" fromTop="19" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebPostRequest.cs" caret="892" fromTop="25" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebPostRequest.cs" caret="1312" fromTop="32" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="5250" fromTop="33" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="1397" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2008" fromTop="24" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="5092" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2448" fromTop="17" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="1545" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="1697" fromTop="19" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Lead.cs" caret="1832" fromTop="2" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Lead.cs" caret="429" fromTop="15" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="4983" fromTop="33" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="998" fromTop="14" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="1085" fromTop="6" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="3432" fromTop="24" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="3432" fromTop="27" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="3157" fromTop="18" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="3432" fromTop="17" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="3910" fromTop="24" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="4680" fromTop="26" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="4433" fromTop="20" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="4559" fromTop="25" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="using" priority="0" />
+      <Item value="driver" priority="1" />
+      <Item value="if" priority="4" />
+      <Item value="m_IEFoundBrowsers" priority="0" />
+      <Item value="m_Proc" priority="1" />
+      <Item value="null" priority="0" />
+      <Item value="request22" priority="0" />
+      <Item value="WebRequest`0" priority="4" />
+      <Item value="new" priority="12" />
+      <Item value="wr" priority="2" />
+      <Item value="WebClient`0" priority="0" />
+      <Item value="WebClient" priority="0" />
+      <Item value="wc" priority="0" />
+      <Item value="HttpWebRequest`0" priority="2" />
+      <Item value="HttpWebRequest" priority="0" />
+      <Item value="hr" priority="1" />
+      <Item value="HttpWebResponse`0" priority="1" />
+      <Item value="CookieCollection`0" priority="1" />
+      <Item value="string" priority="20" />
+      <Item value="Dictionary" priority="0" />
+      <Item value="public" priority="3" />
+      <Item value="WebPostRequest`0" priority="1" />
+      <Item value="_request" priority="5" />
+      <Item value="_querydata" priority="2" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="0" />
+      <Item value="void" priority="0" />
+      <Item value="String`0" priority="2" />
+      <Item value="key" priority="0" />
+      <Item value="value" priority="0" />
+      <Item value="Collection" priority="0" />
+      <Item value="Collection&lt;string&gt;" priority="0" />
+      <Item value="typeof" priority="0" />
+      <Item value="parameters" priority="1" />
+      <Item value="StreamWriter" priority="0" />
+      <Item value="sw" priority="1" />
+      <Item value="_response" priority="1" />
+      <Item value="StreamReader`0" priority="0" />
+      <Item value="StreamReader" priority="0" />
+      <Item value="return" priority="0" />
+      <Item value="sr" priority="0" />
+      <Item value="WebPostRequest" priority="0" />
+      <Item value="wpr" priority="5" />
+      <Item value="var" priority="2" />
+      <Item value="Console`0" priority="1" />
+      <Item value="response" priority="0" />
+      <Item value="Settings" priority="0" />
+      <Item value="BrowserType`0" priority="0" />
+      <Item value="Manager`0" priority="0" />
+      <Item value="Manager" priority="0" />
+      <Item value="settings" priority="0" />
+      <Item value="manager" priority="55" />
+      <Item value="user" priority="0" />
+      <Item value="Element`0" priority="14" />
+      <Item value="select" priority="1" />
+      <Item value="Find`0" priority="1" />
+      <Item value="e" priority="6" />
+      <Item value="datebutton" priority="0" />
+      <Item value="from" priority="0" />
+      <Item value="DateTime`0" priority="0" />
+      <Item value="doctype" priority="0" />
+      <Item value="pagesize" priority="1" />
+      <Item value="true" priority="0" />
+      <Item value="foreach" priority="2" />
+      <Item value="private" priority="9" />
+      <Item value="Lead`0" priority="1" />
+      <Item value="_city" priority="0" />
+      <Item value="_zip" priority="0" />
+      <Item value="_streetaddress" priority="0" />
+      <Item value="_state" priority="0" />
+      <Item value="_recordeddate" priority="0" />
+      <Item value="_middle" priority="0" />
+      <Item value="_last" priority="0" />
+      <Item value="_first" priority="0" />
+      <Item value="_debt" priority="0" />
+      <Item value="ICollection" priority="0" />
+      <Item value="in" priority="0" />
+      <Item value="details" priority="0" />
+      <Item value="row" priority="1" />
+      <Item value="content" priority="3" />
+      <Item value="InnerText" priority="0" />
+      <Item value="HtmlWait" priority="0" />
+      <Item value="while" priority="0" />
+      <Item value="Browser`0" priority="1" />
+      <Item value="Thread`0" priority="0" />
+      <Item value="browser" priority="4" />
+      <Item value="clientid" priority="1" />
+      <Item value="int" priority="0" />
+      <Item value="IList" priority="0" />
+      <Item value="HtmlTableRow`0" priority="1" />
+      <Item value="date" priority="0" />
+      <Item value="detailbrowser" priority="3" />
+      <Item value="lead" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:IEAutomation.IEDriver">
+      <Item value="Navigate`0" priority="0" />
+      <Item value="ClickButton`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.Process">
+      <Item value="MainWindowHandle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.VisualStudio.TestTools.WebTesting.WebTestRequest">
+      <Item value="PostRequest" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.WebRequest">
+      <Item value="Create`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.WebRequest">
+      <Item value="Method" priority="1" />
+      <Item value="ContentType" priority="0" />
+      <Item value="ContentLength" priority="0" />
+      <Item value="GetRequestStream`0" priority="0" />
+      <Item value="GetResponse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format`0" priority="0" />
+      <Item value="Join`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpUtility">
+      <Item value="UrlEncode`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ObjectModel.Collection`1">
+      <Item value="ToArray`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Length" priority="2" />
+      <Item value="Contains`0" priority="4" />
+      <Item value="Substring`0" priority="1" />
+      <Item value="IndexOf`0" priority="1" />
+      <Item value="Replace`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="Write`0" priority="0" />
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.HttpWebResponse">
+      <Item value="GetResponseStream`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadToEnd`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.WebPostRequest">
+      <Item value="Add`0" priority="3" />
+      <Item value="GetResponse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ArtOfTest.WebAii.Core.BrowserType">
+      <Item value="InternetExplorer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Manager">
+      <Item value="Start`0" priority="0" />
+      <Item value="LaunchNewBrowser`0" priority="0" />
+      <Item value="ActiveBrowser" priority="39" />
+      <Item value="Wait" priority="1" />
+      <Item value="Browsers" priority="5" />
+      <Item value="DialogMonitor" priority="0" />
+      <Item value="SetNewBrowserTracking`0" priority="2" />
+      <Item value="RemoveBrowser`0" priority="0" />
+      <Item value="WaitForNewBrowserConnect`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Browser">
+      <Item value="NavigateTo`0" priority="1" />
+      <Item value="Find" priority="16" />
+      <Item value="Actions" priority="15" />
+      <Item value="IsReady`0" priority="0" />
+      <Item value="WaitUntilReady`0" priority="2" />
+      <Item value="AutoWaitUntilReady" priority="0" />
+      <Item value="GoBack`0" priority="0" />
+      <Item value="WaitForUrl`0" priority="0" />
+      <Item value="ClientId" priority="3" />
+      <Item value="RefreshDomTree`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Find">
+      <Item value="ByName`1" priority="5" />
+      <Item value="ByAttributes`1" priority="2" />
+      <Item value="ByCustom`0" priority="3" />
+      <Item value="AllByCustom`1" priority="1" />
+      <Item value="AllByContent`1" priority="1" />
+      <Item value="ByContent`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Actions">
+      <Item value="SetText`0" priority="1" />
+      <Item value="InvokeEvent`0" priority="1" />
+      <Item value="Click`0" priority="4" />
+      <Item value="SelectDropDown`0" priority="2" />
+      <Item value="InvokeScript`1" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.ObjectModel.Element">
+      <Item value="TextContent" priority="5" />
+      <Item value="Content" priority="3" />
+      <Item value="CssClassAttributeValue" priority="0" />
+      <Item value="GetNextSibling`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="AddDays`0" priority="0" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.Common.WaitSync">
+      <Item value="For`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ObjectModel.ReadOnlyCollection`1">
+      <Item value="Count" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="Sleep`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.Lead">
+      <Item value="Recordeddate" priority="0" />
+      <Item value="Debt" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
