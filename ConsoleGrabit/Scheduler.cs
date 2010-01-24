@@ -2,30 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using ConsoleGrabit.Interfaces;
 
 namespace ConsoleGrabit
 {
     public class Scheduler
     {
-        public Scheduler()
+        public Scheduler( List<IWebsiteAutomater> websites )
         {
-            _websites = new List<IWebsiteAutomater>();
+            _websites = websites;
         }
 
-        private List<WebconfigsConfig> _websites;
+        private List<IWebsiteAutomater> _websites;
 
-        public delegate void ScheduleAutomation(Type type);
+        public delegate void ScheduleAutomation(string messages);
         public event ScheduleAutomation Schedule;
 
         protected void Monitor()
         {
-            foreach (var websiteAutomater in _websites)
+            foreach (IWebsiteAutomater websiteAutomater in _websites)
             {
-
+                if (  )
             }
 
             Thread.Sleep(5 * 60 * 1000); //5 minutes
         }
+
+
+
+
 
     }
 }

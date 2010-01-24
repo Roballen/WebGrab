@@ -54,9 +54,17 @@ public partial class WebconfigsConfig {
     
     private string usernameField;
     
-    private string passwordField;
+    private ushort passwordField;
+    
+    private bool passwordFieldSpecified;
     
     private byte priorityField;
+    
+    private bool priorityFieldSpecified;
+    
+    private byte intervalField;
+    
+    private bool intervalFieldSpecified;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -104,12 +112,23 @@ public partial class WebconfigsConfig {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string password {
+    public ushort password {
         get {
             return this.passwordField;
         }
         set {
             this.passwordField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool passwordSpecified {
+        get {
+            return this.passwordFieldSpecified;
+        }
+        set {
+            this.passwordFieldSpecified = value;
         }
     }
     
@@ -121,6 +140,39 @@ public partial class WebconfigsConfig {
         }
         set {
             this.priorityField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool prioritySpecified {
+        get {
+            return this.priorityFieldSpecified;
+        }
+        set {
+            this.priorityFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public byte interval {
+        get {
+            return this.intervalField;
+        }
+        set {
+            this.intervalField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool intervalSpecified {
+        get {
+            return this.intervalFieldSpecified;
+        }
+        set {
+            this.intervalFieldSpecified = value;
         }
     }
 }

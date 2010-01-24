@@ -7,3 +7,9 @@ C:\Users\rallen\Documents\Visual Studio 2008\Projects\GrabIt\ConsoleGrabit\bin\D
 C:\git\dev\WebGrab\ConsoleGrabit\obj\Debug\ConsoleGrabit.exe
 C:\git\dev\WebGrab\ConsoleGrabit\obj\Debug\ConsoleGrabit.pdb
 C:\git\dev\WebGrab\ConsoleGrabit\obj\Debug\ResolveAssemblyReference.cache
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\ConsoleGrabit.exe.config
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\ConsoleGrabit.exe
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\ConsoleGrabit.pdb
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\ArtOfTest.WebAii.AspNet.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Utilities.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\CountyRules.xml

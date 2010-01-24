@@ -7,6 +7,6 @@ namespace ConsoleGrabit.Interfaces
 {
     public interface IWebsiteAutomater
     {
-        Lead Automate();
+        IList<Lead> Automate();
     }
 }

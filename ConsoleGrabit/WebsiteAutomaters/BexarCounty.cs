@@ -12,20 +12,25 @@ namespace ConsoleGrabit.WebsiteAutomaters
     {
         private WebconfigsConfig _config;
 
-        public BexarCounty(WebconfigsConfig config)
+        public BexarCounty(WebconfigsConfig config) : base(config){}
+
+        public IList<Lead> Automate()
         {
-            _config = config;
+            return NeedtoCheck() ? Process() : new List<Lead>();
         }
 
-        public Lead Automate()
+        private IList<Lead> Process()
         {
-            var lead = new Lead();
+            var leads = new List<Lead>();
 
             Settings settings = new Settings(BrowserType.InternetExplorer, @"c:\log\");
+            settings.ClientReadyTimeout = 60*1000;
+
             Manager manager = new Manager(settings);
 
             manager.Start();
-            manager.LaunchNewBrowser();
+          
+                manager.LaunchNewBrowser();
             manager.ActiveBrowser.AutoWaitUntilReady = true;
 
             manager.ActiveBrowser.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
@@ -79,12 +84,12 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
             foreach (Element row in details)
             {
-
+                var lead = new Lead();
                 //                string content = row.Content;
                 //                string url = content.Substring(content.IndexOf("'"));
-                manager.ActiveBrowser.Actions.Click(row);
 
-                manager.ActiveBrowser.RefreshDomTree();
+                manager.ActiveBrowser.Actions.Click(row);
+                manager.ActiveBrowser.WaitUntilReady();
 
                 Browser detailbrowser = null;
                 foreach (var browser in manager.Browsers)
@@ -95,15 +100,24 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
                 if (detailbrowser != null)
                 {
-
+                    detailbrowser.RefreshDomTree();
+                    ICollection<Element> data = detailbrowser.Find.AllByAttributes("class=clsdetaildata");
+                    foreach (var element in data)
+                    {
+                        Console.WriteLine( element.TagNameIndex + " : " + element.TextContent);
+                    }
 
                     Element date = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Filed Date"));
                     lead.Recordeddate = date.GetNextSibling().TextContent;
 
                     Element amount = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Consideration Amt"));
-                    lead.Debt = date.GetNextSibling().TextContent;
+                    lead.Debt = amount.GetNextSibling().TextContent;
 
-                    string blah = "";
+                    Element generaltab = amount.Parent.Parent.Parent;
+                    Element nametable = detailbrowser.Find.ByTagIndex("table", 5);
+                    
+
+                    leads.Add(lead);
                 }
 
 
@@ -112,13 +126,13 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 //IList<Element> rows =  manager.ActiveBrowser.Find.AllByCustom( e => e.CssClassAttributeValue  == "clsdetaildata");
 
                 //Element debt = manager.ActiveBrowser.Find
-                int count = manager.Browsers.Count;
+                //int count = manager.Browsers.Count;
 
 
-                manager.ActiveBrowser.GoBack();
+                //manager.ActiveBrowser.GoBack();
             }
 
-            return lead;
+            return leads;
         }
     }
 }
