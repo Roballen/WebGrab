@@ -5,5 +5,11 @@
     <Setting Name="configlocation" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="javacachedirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Documents and Settings\Rob Allen\Application Data\Sun\Java\Deployment\cache\</Value>
+    </Setting>
+    <Setting Name="pdfstore" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\pdf\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

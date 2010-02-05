@@ -2,11 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utilities;
 
 namespace ConsoleGrabit
 {
     public class Lead
     {
+        /// <summary>
+        /// must have debt
+        /// must have last name or business name
+        /// must have street address and zip or street address and city and state
+        /// </summary>
+        /// <returns></returns>
+        public bool IsValid()
+        {
+            return ((!_last.IsEmpty() || !_businessname.IsEmpty()) && !_debt.IsEmpty() &&
+                    (!_streetaddress.IsEmpty() && (!_zip.IsEmpty() || (!_state.IsEmpty() && !_city.IsEmpty()))));
+        }
 
         public Lead()
         {
@@ -84,7 +96,6 @@ namespace ConsoleGrabit
         }
 
         #endregion
-
 
         #region members
 

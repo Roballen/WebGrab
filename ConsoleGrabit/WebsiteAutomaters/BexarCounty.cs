@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ArtOfTest.Common;
+using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
+using Utilities;
+
 using ConsoleGrabit.Interfaces;
 
 namespace ConsoleGrabit.WebsiteAutomaters
@@ -16,123 +20,152 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
         public IList<Lead> Automate()
         {
-            return NeedtoCheck() ? Process() : new List<Lead>();
+            return NeedtoCheck() ? Process() : _leads;
         }
 
         private IList<Lead> Process()
         {
-            var leads = new List<Lead>();
-
-            Settings settings = new Settings(BrowserType.InternetExplorer, @"c:\log\");
-            settings.ClientReadyTimeout = 60*1000;
-
-            Manager manager = new Manager(settings);
-
+            var settings = new Settings(BrowserType.InternetExplorer, @"c:\log\") {ClientReadyTimeout = 60*1000};
+            var manager = new Manager(settings);
             manager.Start();
-          
-                manager.LaunchNewBrowser();
+            manager.LaunchNewBrowser();
             manager.ActiveBrowser.AutoWaitUntilReady = true;
 
-            manager.ActiveBrowser.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
-            Element user = manager.ActiveBrowser.Find.ByName("txtUserName");
-            manager.ActiveBrowser.Actions.SetText(user, "jsmithee");
+            var mainbrowser = manager.ActiveBrowser;
 
-            Element pass = manager.ActiveBrowser.Find.ByName("txtPassword");
-            manager.ActiveBrowser.Actions.SetText(pass, "2020");
+            mainbrowser.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
+            var user = mainbrowser.Find.ByName("txtUserName");
+            mainbrowser.Actions.SetText(user, "jsmithee");
 
-            Element login = manager.ActiveBrowser.Find.ByAttributes("class=clsHotKeyLink");
-            manager.ActiveBrowser.Actions.Click(login);
+            var pass = mainbrowser.Find.ByName("txtPassword");
+            mainbrowser.Actions.SetText(pass, "2020");
 
-            Element select = manager.ActiveBrowser.Find.ByName("Appls");
-            //manager.ActiveBrowser.Actions.SelectDropDown(select,"Land Records");
-            manager.ActiveBrowser.Actions.SelectDropDown(select, "56", true);
-            manager.ActiveBrowser.Actions.Click(select);
+            var login = mainbrowser.Find.ByAttributes("class=clsHotKeyLink");
+            mainbrowser.Actions.Click(login);
 
-            //Element datebtn = Find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
+            var select = mainbrowser.Find.ByName("Appls");
+            mainbrowser.Actions.SelectDropDown(select, "56", true);
+            mainbrowser.Actions.Click(select);
 
-            Element datebutton = manager.ActiveBrowser.Find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
-            manager.ActiveBrowser.Actions.Click(datebutton);
+            var datebutton = mainbrowser.Find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
+            mainbrowser.Actions.Click(datebutton);
 
-            Element from = manager.ActiveBrowser.Find.ByName("SearchbyDateFrom");
-            manager.ActiveBrowser.Actions.SetText(from, DateTime.Now.AddDays(-10).ToString("MM/dd/yyyy"));
+            var from = mainbrowser.Find.ByName("SearchbyDateFrom");
+            mainbrowser.Actions.SetText(from, DateTime.Now.AddDays(-10).ToString("MM/dd/yyyy"));
 
-            Element to = manager.ActiveBrowser.Find.ByName("SearchbyDateTo");
-            manager.ActiveBrowser.Actions.SetText(to, DateTime.Now.ToString("MM/dd/yyyy"));
+            var to = mainbrowser.Find.ByName("SearchbyDateTo");
+            mainbrowser.Actions.SetText(to, DateTime.Now.ToString("MM/dd/yyyy"));
 
-            Element doctype = manager.ActiveBrowser.Find.ByName("availSearchDocType");
-            manager.ActiveBrowser.Actions.SelectDropDown(doctype, "FEDERAL TAX LIEN");
+            var doctype = mainbrowser.Find.ByName("availSearchDocType");
+            mainbrowser.Actions.SelectDropDown(doctype, "FEDERAL TAX LIEN");
 
-            manager.ActiveBrowser.Actions.InvokeScript("addDocType()");
+            mainbrowser.Actions.InvokeScript("addDocType()");
 
-            Element pagesize = manager.ActiveBrowser.Find.ByAttributes("value=200");
+            var pagesize = mainbrowser.Find.ByAttributes("value=200");
             if (pagesize != null)
-                manager.ActiveBrowser.Actions.Click(pagesize);
+                mainbrowser.Actions.Click(pagesize);
 
+            var clientid = mainbrowser.ClientId;
 
-            string clientid = manager.ActiveBrowser.ClientId;
+            mainbrowser.Actions.InvokeScript("submitForm()");
 
-            manager.ActiveBrowser.Actions.InvokeScript("submitForm()");
+            foreach (var browser in manager.Browsers.Where(browser => browser.ClientId != clientid))
+                manager.RemoveBrowser(browser.ClientId);
 
+            ProcessRecords(manager);
 
-            foreach (var browser in manager.Browsers)
-            {
-                if (browser.ClientId != clientid)
-                    manager.RemoveBrowser(browser.ClientId);
-            }
+            return _leads;
+        }
 
-            ICollection<Element> details = manager.ActiveBrowser.Find.AllByCustom(e => e.Content.Contains("Detail.asp"));
-
-            foreach (Element row in details)
+        private void ProcessRecords(Manager manager )
+        {
+            var mainbrowser = manager.ActiveBrowser;
+            //first scroll through and try to get the data from the ViewDetails pop up
+            ICollection<Element> details = mainbrowser.Find.AllByCustom(e => e.Content.Contains("Detail.asp"));
+            foreach (var element in details)
             {
                 var lead = new Lead();
-                //                string content = row.Content;
-                //                string url = content.Substring(content.IndexOf("'"));
 
-                manager.ActiveBrowser.Actions.Click(row);
-                manager.ActiveBrowser.WaitUntilReady();
+                mainbrowser.Actions.Click(element);
+                mainbrowser.WaitUntilReady();
 
-                Browser detailbrowser = null;
-                foreach (var browser in manager.Browsers)
+                var detailbrowser = manager.ActiveBrowser;
+                if (detailbrowser == null) continue;
+              
+                detailbrowser.RefreshDomTree();
+                detailbrowser.WaitUntilReady();
+
+                var date = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Filed Date"));
+                lead.Recordeddate = date.GetNextSibling().TextContent;
+
+                var amount = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Consideration Amt"));
+                lead.Debt = amount.GetNextSibling().TextContent;
+
+                var headers = detailbrowser.Find.AllByAttributes("class=clsDetailSubHead");
+                foreach (var headertable in headers.Select(header => GetFirstParentByTagName(header,"table")))
                 {
-                    if (browser.ClientId != clientid)
-                        detailbrowser = browser;
-                }
 
-                if (detailbrowser != null)
-                {
-                    detailbrowser.RefreshDomTree();
-                    ICollection<Element> data = detailbrowser.Find.AllByAttributes("class=clsdetaildata");
-                    foreach (var element in data)
+                    if (headertable.InnerText.Contains("Property Address"))
                     {
-                        Console.WriteLine( element.TagNameIndex + " : " + element.TextContent);
+                        //haven't seen one with a property address yet.
                     }
 
-                    Element date = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Filed Date"));
-                    lead.Recordeddate = date.GetNextSibling().TextContent;
+                    else if (headertable.InnerText.IsEmpty())
+                    {
+                        var htmlnametable = new HtmlControl(headertable);
+                        var namecells = htmlnametable.Find.AllByAttributes("class=clsdetaildata");
+                        var name = "";
+                        if (namecells.Count > 0)
+                        {
+                            name = namecells[0].InnerText;
+                            if (name.Contains(","))
+                            {
+                                var names = name.Split(',');
+                                if (names.Length > 1)
+                                    lead.First = names[1];
 
-                    Element amount = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Consideration Amt"));
-                    lead.Debt = amount.GetNextSibling().TextContent;
-
-                    Element generaltab = amount.Parent.Parent.Parent;
-                    Element nametable = detailbrowser.Find.ByTagIndex("table", 5);
-                    
-
-                    leads.Add(lead);
+                                lead.Last = names[0];
+                            }
+                            else
+                                lead.Businessname = name;
+                        }
+                    }
                 }
 
+                //we can leave open the details window for later use
 
+                if (lead.IsValid())
+                {
+                    _leads.Add(lead);
+                    continue;
+                }
 
+                var detailrow = GetFirstParentByTagName(element, "tr");
+                var tablerow = new HtmlTableRow(detailrow);
+                var imageclick = tablerow.Find.ByCustom(e => e.Content.Contains("viewImageFrames.asp"));
 
-                //IList<Element> rows =  manager.ActiveBrowser.Find.AllByCustom( e => e.CssClassAttributeValue  == "clsdetaildata");
+                //add event listener
+                AddListener();
+                mainbrowser.Actions.Click(imageclick);
+                WaitForJavaApplet();
 
-                //Element debt = manager.ActiveBrowser.Find
-                //int count = manager.Browsers.Count;
+                if ( _waitingforimage )
+                {
+                    //try once more
+                    foreach (var browser in manager.Browsers.Where(browser => browser.ClientId != mainbrowser.ClientId))
+                    {
+                        browser.Close();
+                        mainbrowser.Actions.Click(imageclick);
+                        WaitForJavaApplet();
+                    }
+                }
 
-
-                //manager.ActiveBrowser.GoBack();
-            }
-
-            return leads;
+                RemoveListener();
+                foreach (var browser in manager.Browsers.Where(browser => browser.ClientId != mainbrowser.ClientId))
+                {
+                    browser.Close();
+                }
+            }           
         }
     }
 }

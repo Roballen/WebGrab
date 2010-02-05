@@ -34,5 +34,29 @@ namespace ConsoleGrabit.Properties {
                 this["configlocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Documents and Settings\\Rob Allen\\Application Data\\Sun\\Java\\Deployment\\cache\\")]
+        public string javacachedirectory {
+            get {
+                return ((string)(this["javacachedirectory"]));
+            }
+            set {
+                this["javacachedirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\pdf\\")]
+        public string pdfstore {
+            get {
+                return ((string)(this["pdfstore"]));
+            }
+            set {
+                this["pdfstore"] = value;
+            }
+        }
     }
 }

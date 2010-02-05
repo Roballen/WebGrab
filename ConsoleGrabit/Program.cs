@@ -23,8 +23,31 @@ namespace ConsoleGrabit
         static void Main(string[] args)
         {
 
+            var configlocation = GetConfiglocation(args);
+
+            //create a location for copying pdfs
+            FileTools.SForceDirectories(Properties.Settings.Default.pdfstore);
+           
+            if (FileTools.SFileExists(configlocation))
+                WebAutomaterFactory.GetConfigs(configlocation);
+
+            var websites = WebAutomaterFactory.GetWebSiteList();
+
+
+            //run automation on every website defined in config file
+            foreach (var websiteAutomater in websites)
+            {
+                foreach (var lead in websiteAutomater.Automate())
+                {
+                    Console.WriteLine(lead.Streetaddress);
+                }
+            }
+        }
+
+        private static string GetConfiglocation(string[] args)
+        {
             var configlocation = Properties.Settings.Default.configlocation;
-            if (configlocation == null || configlocation.IsEmpty())
+            if (configlocation == null || configlocation.IsEmpty()) // use setting, then args, then something in the execution path
             {
                 if (args.Length > 0)
                     configlocation = args[0];
@@ -37,21 +60,8 @@ namespace ConsoleGrabit
                         Console.WriteLine("No configuration File specified, using defaults");
                 }
             }
-
-            if (FileTools.SFileExists(configlocation))
-                WebAutomaterFactory.GetConfigs(configlocation);
-
-            var websites = WebAutomaterFactory.GetWebSiteList();
-
-            foreach (var websiteAutomater in websites)
-            {
-                foreach (var lead in websiteAutomater.Automate())
-                {
-                    Console.WriteLine(lead.Streetaddress);
-                }
-            }
-
-
+            return configlocation;
         }
+
     }
 }

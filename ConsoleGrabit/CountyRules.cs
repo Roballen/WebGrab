@@ -66,6 +66,10 @@ public partial class WebconfigsConfig {
     
     private bool intervalFieldSpecified;
     
+    private byte daysbackField;
+    
+    private bool daysbackFieldSpecified;
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public string type {
@@ -173,6 +177,28 @@ public partial class WebconfigsConfig {
         }
         set {
             this.intervalFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public byte daysback {
+        get {
+            return this.daysbackField;
+        }
+        set {
+            this.daysbackField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool daysbackSpecified {
+        get {
+            return this.daysbackFieldSpecified;
+        }
+        set {
+            this.daysbackFieldSpecified = value;
         }
     }
 }
