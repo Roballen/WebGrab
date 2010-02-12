@@ -58,5 +58,17 @@ namespace ConsoleGrabit.Properties {
                 this["pdfstore"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\db40\\County.yap")]
+        public string Db40Location {
+            get {
+                return ((string)(this["Db40Location"]));
+            }
+            set {
+                this["Db40Location"] = value;
+            }
+        }
     }
 }

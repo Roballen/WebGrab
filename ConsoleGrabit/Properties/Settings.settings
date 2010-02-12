@@ -11,5 +11,8 @@
     <Setting Name="pdfstore" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\pdf\</Value>
     </Setting>
+    <Setting Name="Db40Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\db40\County.yap</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -13,3 +13,5 @@ C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\ConsoleGrabit.pdb
 C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\ArtOfTest.WebAii.AspNet.dll
 C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Utilities.dll
 C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\CountyRules.xml
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.xml

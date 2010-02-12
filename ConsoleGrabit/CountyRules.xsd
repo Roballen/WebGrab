@@ -9,7 +9,7 @@
             <xs:attribute name="starttime" type="xs:time" use="required" />
             <xs:attribute name="checksperday" type="xs:unsignedByte" use="required" />
             <xs:attribute name="username" type="xs:string" use="optional" />
-            <xs:attribute name="password" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="password" type="xs:string" use="optional" />
             <xs:attribute name="priority" type="xs:unsignedByte" use="optional" />
             <xs:attribute name="interval" type="xs:unsignedByte" use="optional" />
             <xs:attribute name="daysback" type="xs:unsignedByte" use="optional" />

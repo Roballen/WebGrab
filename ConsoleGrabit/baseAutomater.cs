@@ -7,6 +7,7 @@ using System.Threading;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ConsoleGrabit.Interfaces;
+using ConsoleGrabit.Models;
 using Utilities;
 
 namespace ConsoleGrabit
@@ -16,20 +17,32 @@ namespace ConsoleGrabit
         protected FileSystemWatcher _listener;
         protected DateTime? _lastupdate;
         protected int _pullstoday;
-        protected WebconfigsConfig _config;
         protected IList<Lead> _leads;
         protected bool _waitingforimage;
         protected string _pdfstore;
+        protected string _imagelocation;
+
+        public string Imagelocation
+        {
+            get { return _imagelocation; }
+            set { _imagelocation = value; }
+        }
+
+
+
+        private CountyPull _pull;
+
+        protected WebconfigsConfig _config;
 
         protected BaseAutomater(WebconfigsConfig config)
         {
+            _config = config;
             _pdfstore = Properties.Settings.Default.pdfstore;
 
             _listener = new FileSystemWatcher(Properties.Settings.Default.javacachedirectory);
             _listener.NotifyFilter = NotifyFilters.FileName;
             _listener.IncludeSubdirectories = true;
             _listener.Filter = "";
-            _config = config;
             _lastupdate = null;
             _pullstoday = 0;
             _leads = new List<Lead>();
@@ -50,12 +63,6 @@ namespace ConsoleGrabit
             return false;
         }
 
-        protected Element GetFirstParentByTagName(Element header, string tagname)
-        {
-            header = header.Parent;
-            return header.TagName.ToLower() == tagname.ToLower() ? header : GetFirstParentByTagName(header, tagname);
-        }
-
         protected void AddListener()
         {
             _listener.Created += ProcessDocument;
@@ -68,29 +75,37 @@ namespace ConsoleGrabit
             _listener.EnableRaisingEvents = false;
         }
 
-        protected  void ProcessDocument(object source, FileSystemEventArgs e)
+        protected void ProcessDocument(object source, FileSystemEventArgs e)
         {
-            // Specify what is done when a file is changed, created, or deleted.
-            var ext = Path.GetExtension(e.FullPath);
-            if (ext == ".idx") return;
+            try
+            {
+                // Specify what is done when a file is changed, created, or deleted.
+                var ext = Path.GetExtension(e.FullPath);
+                if (ext == ".idx") return;
 
-            var scrubbedpath = e.FullPath.Replace("-temp", "");
+                var scrubbedpath = e.FullPath.Replace("-temp", "");
 
-            WaitForFile(scrubbedpath);
+                WaitForFile(scrubbedpath);
 
-            Console.WriteLine("File: " + scrubbedpath + " " + e.ChangeType);
-            //var imagetype = GetFileTypeFromIndex(e.FullPath);
+                Console.WriteLine("File: " + scrubbedpath + " " + e.ChangeType);
+                //var imagetype = GetFileTypeFromIndex(e.FullPath);
 
-            var to = Path.Combine(_pdfstore, Path.GetFileNameWithoutExtension(e.FullPath) + ".tif");
+                var to = Path.Combine(_pdfstore, Path.GetFileNameWithoutExtension(e.FullPath) + ".tif");
 
-            FileTools.SCopyFile(scrubbedpath, to);
+                FileTools.SCopyFile(scrubbedpath, to);
 
-            _waitingforimage = false;
+                _waitingforimage = false;
+                _imagelocation = to;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
 
-        protected  void WaitForFile(string fullPath)
+        protected void WaitForFile(string fullPath)
         {
-            while (true)
+            while ( true )
             {
                 try
                 {
@@ -114,9 +129,10 @@ namespace ConsoleGrabit
             return ".tif";
         }
 
-        protected void WaitForJavaApplet()
+        protected bool WaitForJavaApplet()
         {
             _waitingforimage = true;
+            var found = false;
             long totalwait = 0;
 
             while (_waitingforimage || totalwait > (1000 * 45))
@@ -124,7 +140,24 @@ namespace ConsoleGrabit
                 Thread.Sleep(1000);
                 totalwait += 1000;
             }
+            found = !_waitingforimage;
+            _waitingforimage = false;
+            return found;
         }
+
+        protected void PerformOCR(ref Lead lead)
+        {
+            return;
+        }
+
+        protected string GetUrlFromJavaPopHref(string href)
+        {
+            int firstindex = href.IndexOf("'");
+            int secondindex = href.IndexOf("'", firstindex + 1);
+            var url = href.Substring(firstindex + 1, secondindex - firstindex);
+            
+            return url;
+ }
 
     }
 }

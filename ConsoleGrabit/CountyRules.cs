@@ -54,7 +54,7 @@ public partial class WebconfigsConfig {
     
     private string usernameField;
     
-    private ushort passwordField;
+    private string passwordField;
     
     private bool passwordFieldSpecified;
     
@@ -116,7 +116,7 @@ public partial class WebconfigsConfig {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public ushort password {
+    public string password {
         get {
             return this.passwordField;
         }

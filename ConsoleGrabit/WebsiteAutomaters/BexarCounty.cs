@@ -6,103 +6,178 @@ using ArtOfTest.Common;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
+using ArtOfTest.WebAii.Win32.Dialogs;
+using ConsoleGrabit.Models;
 using Utilities;
 
 using ConsoleGrabit.Interfaces;
 
 namespace ConsoleGrabit.WebsiteAutomaters
 {
-    public class BexarCounty : BaseAutomater, IWebsiteAutomater
+    public class BexarCounty : BaseWebAiiAutomater, IWebsiteAutomater
     {
-        private WebconfigsConfig _config;
+        public BexarCounty(WebconfigsConfig config) : base(config) { }
 
-        public BexarCounty(WebconfigsConfig config) : base(config){}
+        //        public CountyPull Automate()
+        //        {
+        //            return NeedtoCheck() ? Process() : _pull;
+        //        }
 
-        public IList<Lead> Automate()
+        public bool AreRecordsToProcess()
         {
-            return NeedtoCheck() ? Process() : _leads;
+            return !_main.Url.Contains("SearchCriteria");
         }
 
-        private IList<Lead> Process()
+        public string County()
         {
-            var settings = new Settings(BrowserType.InternetExplorer, @"c:\log\") {ClientReadyTimeout = 60*1000};
-            var manager = new Manager(settings);
-            manager.Start();
-            manager.LaunchNewBrowser();
-            manager.ActiveBrowser.AutoWaitUntilReady = true;
+            return _config.type;
+        }
 
-            var mainbrowser = manager.ActiveBrowser;
+        public void NavigateToLeadList()
+        {
+            SetUp();
 
-            mainbrowser.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
-            var user = mainbrowser.Find.ByName("txtUserName");
-            mainbrowser.Actions.SetText(user, "jsmithee");
+            _main.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
+            var user = _find.ByName("txtUserName");
+            _main.Actions.SetText(user, _config.username);
 
-            var pass = mainbrowser.Find.ByName("txtPassword");
-            mainbrowser.Actions.SetText(pass, "2020");
+            var pass = _find.ByName("txtPassword");
+            _main.Actions.SetText(pass, _config.password);
 
-            var login = mainbrowser.Find.ByAttributes("class=clsHotKeyLink");
-            mainbrowser.Actions.Click(login);
+            var login = _find.ByAttributes("class=clsHotKeyLink");
+            _main.Actions.Click(login);
 
-            var select = mainbrowser.Find.ByName("Appls");
-            mainbrowser.Actions.SelectDropDown(select, "56", true);
-            mainbrowser.Actions.Click(select);
+            var select = _find.ByName("Appls");
+            _main.Actions.SelectDropDown(select, "56", true);
+            _main.Actions.Click(select);
 
-            var datebutton = mainbrowser.Find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
-            mainbrowser.Actions.Click(datebutton);
+            var datebutton = _find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
+            _main.Actions.Click(datebutton);
 
-            var from = mainbrowser.Find.ByName("SearchbyDateFrom");
-            mainbrowser.Actions.SetText(from, DateTime.Now.AddDays(-10).ToString("MM/dd/yyyy"));
+            var from = _find.ByName("SearchbyDateFrom");
+            var days = _config.daysback;
+            if (days < 1)
+                days = 1;
+            _main.Actions.SetText(from, DateTime.Now.AddDays(-days).ToString("MM/dd/yyyy"));
 
-            var to = mainbrowser.Find.ByName("SearchbyDateTo");
-            mainbrowser.Actions.SetText(to, DateTime.Now.ToString("MM/dd/yyyy"));
+            var to = _find.ByName("SearchbyDateTo");
+            _main.Actions.SetText(to, DateTime.Now.ToString("MM/dd/yyyy"));
 
-            var doctype = mainbrowser.Find.ByName("availSearchDocType");
-            mainbrowser.Actions.SelectDropDown(doctype, "FEDERAL TAX LIEN");
+            var doctype = _find.ByName("availSearchDocType");
+            _main.Actions.SelectDropDown(doctype, "FEDERAL TAX LIEN");
+            _main.Actions.InvokeScript("addDocType()");
+            _main.Actions.SelectDropDown(doctype, "STATE TAX WARRANT");
+            _main.Actions.InvokeScript("addDocType()");
 
-            mainbrowser.Actions.InvokeScript("addDocType()");
-
-            var pagesize = mainbrowser.Find.ByAttributes("value=200");
+            var pagesize = _find.ByAttributes("value=200");
             if (pagesize != null)
-                mainbrowser.Actions.Click(pagesize);
+                _main.Actions.Click(pagesize);
 
-            var clientid = mainbrowser.ClientId;
 
-            mainbrowser.Actions.InvokeScript("submitForm()");
 
-            foreach (var browser in manager.Browsers.Where(browser => browser.ClientId != clientid))
-                manager.RemoveBrowser(browser.ClientId);
+            var clientid = _main.ClientId;
 
-            ProcessRecords(manager);
+            _manager.DialogMonitor.AddDialog(new AlertDialog(_main,DialogButton.OK));
+            _manager.DialogMonitor.Start();
 
-            return _leads;
+            _main.Actions.InvokeScript("submitForm()");
+
+
+            if (!AreRecordsToProcess())
+            {
+                throw new Exception("No records to process");
+            }
+            _manager.DialogMonitor.Stop();
+
+            foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != clientid))
+                _manager.RemoveBrowser(browser.ClientId);
+
         }
 
-        private void ProcessRecords(Manager manager )
+        public IList<Lead> ProcessMultiple()
         {
-            var mainbrowser = manager.ActiveBrowser;
+            _main = _manager.ActiveBrowser;
             //first scroll through and try to get the data from the ViewDetails pop up
-            ICollection<Element> details = mainbrowser.Find.AllByCustom(e => e.Content.Contains("Detail.asp"));
+            IList<Element> details = _find.AllByCustom(e => e.Content.Contains("Detail.asp"));
+
             foreach (var element in details)
             {
                 var lead = new Lead();
 
-                mainbrowser.Actions.Click(element);
-                mainbrowser.WaitUntilReady();
+                try
+                {
+                    _main.Actions.Click(element);
+                    _main.WaitUntilReady();
 
-                var detailbrowser = manager.ActiveBrowser;
-                if (detailbrowser == null) continue;
-              
-                detailbrowser.RefreshDomTree();
-                detailbrowser.WaitUntilReady();
+                    var detailbrowser = _manager.ActiveBrowser;
+                    if (detailbrowser == null) continue;
 
-                var date = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Filed Date"));
-                lead.Recordeddate = date.GetNextSibling().TextContent;
+                    try
+                    {
+                        detailbrowser.RefreshDomTree();
+                        detailbrowser.WaitUntilReady();
+                    }
+                    catch (Exception e) { }
 
-                var amount = detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Consideration Amt"));
-                lead.Debt = amount.GetNextSibling().TextContent;
+                    lead = ProcessDetailView(detailbrowser);
 
+                    //we can leave open the details window for later use
+
+                    if (lead.IsValid())
+                    {
+                        lead.Status = LeadStatus.Complete;
+                        _leads.Add(lead);
+                        continue;
+                    }
+
+                    if (GetDocument(element, ref lead))
+                    {
+                        lead.Document.Disklocation = _imagelocation;
+                        PerformOCR(ref lead);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lead.Messages.Add(new Message() { Content = ex.Message, Messagetype = MessageType.Error });
+                }
+                    _leads.Add(lead);
+
+            }
+
+            foreach (var browse in _manager.Browsers)
+            {
+                browse.Close();
+            }
+
+            return _leads;
+        }
+
+        private Lead ProcessDetailView(Browser detailbrowser)
+        {
+            var lead = new Lead();
+
+            try
+            {
+                lead.Recordeddate = GetNextSiblingText(detailbrowser, e => e.TextContent.Contains("Filed Date"));
+                lead.Debt = GetNextSiblingText(detailbrowser, e => e.TextContent.Contains("Consideration Amt")); //  detailbrowser.Find.ByCustom(e => e.TextContent.Contains("Consideration Amt"));
+                  lead.Id = GetNextSiblingText(detailbrowser, e => e.TextContent.Contains("Document Number"));
+                  lead.Book = GetNextSiblingText(detailbrowser, e => e.TextContent.Contains("Book Number"));
+                  lead.Page = GetNextSiblingText(detailbrowser, e => e.TextContent.Contains("Page Number"));
+                
+                //# of Pages
+                var docpages = GetNextSibling(detailbrowser, e => e.TextContent.Contains("# of Pages"));// detailbrowser.Find.ByCustom(e => e.TextContent.Contains("# of Pages"));
+                if (docpages != null)
+                {
+                    try
+                    {
+                        lead.Document.Pages = Convert.ToInt32(docpages.GetNextSibling().TextContent);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
                 var headers = detailbrowser.Find.AllByAttributes("class=clsDetailSubHead");
-                foreach (var headertable in headers.Select(header => GetFirstParentByTagName(header,"table")))
+                foreach (var headertable in headers.Select(header => GetFirstParentByTagName(header, "table")))
                 {
 
                     if (headertable.InnerText.Contains("Property Address"))
@@ -131,41 +206,62 @@ namespace ConsoleGrabit.WebsiteAutomaters
                         }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                lead.Status = LeadStatus.Error;
+                lead.Messages.Add(new Message() { Content = e.Message, Messagetype = MessageType.Error });
+            }
 
-                //we can leave open the details window for later use
+            return lead;
+        }
 
-                if (lead.IsValid())
-                {
-                    _leads.Add(lead);
-                    continue;
-                }
-
+        private bool GetDocument(Element element, ref Lead lead)
+        {
+            try
+            {
                 var detailrow = GetFirstParentByTagName(element, "tr");
                 var tablerow = new HtmlTableRow(detailrow);
                 var imageclick = tablerow.Find.ByCustom(e => e.Content.Contains("viewImageFrames.asp"));
 
+                lead.Document.Url = GetUrlFromJavaPopHref(imageclick.Content);
+
                 //add event listener
                 AddListener();
-                mainbrowser.Actions.Click(imageclick);
-                WaitForJavaApplet();
+                _main.Actions.Click(imageclick);
+                var documentfound = WaitForJavaApplet();
 
-                if ( _waitingforimage )
+                var test = _manager.ActiveBrowser.Url;
+                Console.WriteLine(test);
+                if (!documentfound)
                 {
                     //try once more
-                    foreach (var browser in manager.Browsers.Where(browser => browser.ClientId != mainbrowser.ClientId))
+                    foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != _main.ClientId))
                     {
                         browser.Close();
-                        mainbrowser.Actions.Click(imageclick);
-                        WaitForJavaApplet();
                     }
+                    _main.Actions.Click(imageclick);
+                    WaitForJavaApplet();
                 }
 
-                RemoveListener();
-                foreach (var browser in manager.Browsers.Where(browser => browser.ClientId != mainbrowser.ClientId))
+
+                foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != _main.ClientId))
                 {
                     browser.Close();
                 }
-            }           
+                return documentfound;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                lead.Messages.Add(new Message() { Content = e.Message, Messagetype = MessageType.Error });
+            }
+            finally
+            {
+                RemoveListener();
+            }
+
+            return false;
         }
     }
 }

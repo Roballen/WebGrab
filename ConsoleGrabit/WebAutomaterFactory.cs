@@ -35,6 +35,7 @@ namespace ConsoleGrabit
         {
             var websites = new List<IWebsiteAutomater>();
 
+            var test = Assembly.GetExecutingAssembly().GetTypes();
                 foreach (var type in Assembly.GetExecutingAssembly().GetTypes() )
                 {
                     if (type == null) continue;
@@ -42,7 +43,7 @@ namespace ConsoleGrabit
                     //                    if (type != typeof (BaseAutomater)) continue;
                     //                    if (type.Name == "BaseAutomater") continue; // we want to register all subclasses, just not the base class
 
-                    if (type.BaseType == null || type.BaseType.Name == null || type.BaseType.Name != "BaseAutomater")
+                    if (type.BaseType == null || type.BaseType.Name == null || type.BaseType.BaseType == null || type.BaseType.BaseType.Name == null || type.BaseType.BaseType.Name != "BaseAutomater")
                         continue;
 
                     var args = new object[1];
