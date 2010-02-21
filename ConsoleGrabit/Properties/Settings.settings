@@ -14,5 +14,8 @@
     <Setting Name="Db40Location" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\db40\County.yap</Value>
     </Setting>
+    <Setting Name="downloadpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\pdf\downloaded\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

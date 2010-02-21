@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Win32.Dialogs;
 using ConsoleGrabit.Interfaces;
@@ -116,6 +117,11 @@ namespace ConsoleGrabit.WebsiteAutomaters
             }
 
             return _leads;
+        }
+
+        private bool GetDocument(Element element, ref Lead lead)
+        {
+            throw new NotImplementedException();
         }
 
         private Lead ProcessDetailView(Browser detailbrowser)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Webconfigs>
-  <Config type="BexarCounty" starttime="09:00:00" checksperday="1" username="jsmithee" password="2020" priority="1" interval="3" />
+  <Config type="BexarCounty" starttime="09:00:00" checksperday="0" username="jsmithee" password="2020" priority="1" interval="3" daysback="5" />
   <Config type="MonroeCounty" starttime="09:00:00" checksperday="1" daysback ="1" />
 </Webconfigs>

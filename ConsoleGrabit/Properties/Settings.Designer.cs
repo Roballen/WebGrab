@@ -70,5 +70,17 @@ namespace ConsoleGrabit.Properties {
                 this["Db40Location"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\pdf\\downloaded\\")]
+        public string downloadpath {
+            get {
+                return ((string)(this["downloadpath"]));
+            }
+            set {
+                this["downloadpath"] = value;
+            }
+        }
     }
 }

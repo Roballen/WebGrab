@@ -49,20 +49,26 @@ namespace ConsoleGrabit
             _waitingforimage = false;
         }
 
-        protected bool NeedtoCheck()
+//        protected bool NeedtoCheck()
+//        {
+//            var interval = _config.intervalSpecified ? _config.interval : 8 / _config.checksperday; // will check equally throughout the day
+//
+//            if ( DateTime.Now > _config.starttime ) // if we are past the start time then start check
+//            {
+//                if (_pullstoday == 0 || _lastupdate == null) // if we haven't done it today go for it
+//                    return true;
+//                if ( _pullstoday < _config.checksperday && (DateTime.Now > ((DateTime)_lastupdate).AddHours(interval))) // if we have done it today, check how many time and the intervals we are to check
+//                    return true;
+//            }
+//            return false;
+//        }
+        
+
+        protected void AddListener(string location)
         {
-            var interval = _config.intervalSpecified ? _config.interval : 8 / _config.checksperday; // will check equally throughout the day
-
-            if ( DateTime.Now > _config.starttime ) // if we are past the start time then start check
-            {
-                if (_pullstoday == 0 || _lastupdate == null) // if we haven't done it today go for it
-                    return true;
-                if ( _pullstoday < _config.checksperday && (DateTime.Now > ((DateTime)_lastupdate).AddHours(interval))) // if we have done it today, check how many time and the intervals we are to check
-                    return true;
-            }
-            return false;
+            _listener.Path = location;
+            AddListener();
         }
-
         protected void AddListener()
         {
             _listener.Created += ProcessDocument;
@@ -135,7 +141,7 @@ namespace ConsoleGrabit
             var found = false;
             long totalwait = 0;
 
-            while (_waitingforimage || totalwait > (1000 * 45))
+            while (_waitingforimage && totalwait < (1000 * 45))
             {
                 Thread.Sleep(1000);
                 totalwait += 1000;

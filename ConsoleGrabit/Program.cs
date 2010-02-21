@@ -66,6 +66,7 @@ namespace ConsoleGrabit
 
             //create a location for copying pdfs
             FileTools.SForceDirectories(Properties.Settings.Default.pdfstore);
+            FileTools.SForceDirectories(Properties.Settings.Default.downloadpath);
            
             if (FileTools.SFileExists(configlocation))
                 WebAutomaterFactory.GetConfigs(configlocation);

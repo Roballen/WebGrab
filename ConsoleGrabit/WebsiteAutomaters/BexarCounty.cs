@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 using ArtOfTest.Common;
+using ArtOfTest.Common.Win32;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
@@ -11,6 +15,7 @@ using ConsoleGrabit.Models;
 using Utilities;
 
 using ConsoleGrabit.Interfaces;
+using Message = ConsoleGrabit.Models.Message;
 
 namespace ConsoleGrabit.WebsiteAutomaters
 {
@@ -35,62 +40,72 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
         public void NavigateToLeadList()
         {
-            SetUp();
-
-            _main.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
-            var user = _find.ByName("txtUserName");
-            _main.Actions.SetText(user, _config.username);
-
-            var pass = _find.ByName("txtPassword");
-            _main.Actions.SetText(pass, _config.password);
-
-            var login = _find.ByAttributes("class=clsHotKeyLink");
-            _main.Actions.Click(login);
-
-            var select = _find.ByName("Appls");
-            _main.Actions.SelectDropDown(select, "56", true);
-            _main.Actions.Click(select);
-
-            var datebutton = _find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
-            _main.Actions.Click(datebutton);
-
-            var from = _find.ByName("SearchbyDateFrom");
-            var days = _config.daysback;
-            if (days < 1)
-                days = 1;
-            _main.Actions.SetText(from, DateTime.Now.AddDays(-days).ToString("MM/dd/yyyy"));
-
-            var to = _find.ByName("SearchbyDateTo");
-            _main.Actions.SetText(to, DateTime.Now.ToString("MM/dd/yyyy"));
-
-            var doctype = _find.ByName("availSearchDocType");
-            _main.Actions.SelectDropDown(doctype, "FEDERAL TAX LIEN");
-            _main.Actions.InvokeScript("addDocType()");
-            _main.Actions.SelectDropDown(doctype, "STATE TAX WARRANT");
-            _main.Actions.InvokeScript("addDocType()");
-
-            var pagesize = _find.ByAttributes("value=200");
-            if (pagesize != null)
-                _main.Actions.Click(pagesize);
-
-
-
-            var clientid = _main.ClientId;
-
-            _manager.DialogMonitor.AddDialog(new AlertDialog(_main,DialogButton.OK));
-            _manager.DialogMonitor.Start();
-
-            _main.Actions.InvokeScript("submitForm()");
-
-
-            if (!AreRecordsToProcess())
+            try
             {
-                throw new Exception("No records to process");
-            }
-            _manager.DialogMonitor.Stop();
+                SetUp();
 
-            foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != clientid))
-                _manager.RemoveBrowser(browser.ClientId);
+                _main.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
+                var user = _find.ByName("txtUserName");
+                _main.Actions.SetText(user, _config.username);
+
+                var pass = _find.ByName("txtPassword");
+                _main.Actions.SetText(pass, _config.password);
+
+                var login = _find.ByAttributes("class=clsHotKeyLink");
+                _main.Actions.Click(login);
+
+                var select = _find.ByName("Appls");
+                _main.Actions.SelectDropDown(select, "56", true);
+                _main.Actions.Click(select);
+
+                var datebutton = _find.ByCustom(e => e.TextContent.Contains("Document Type / Date"));
+                _main.Actions.Click(datebutton);
+
+                var from = _find.ByName("SearchbyDateFrom");
+                var days = _config.daysback;
+                if (days < 1)
+                    days = 1;
+                _main.Actions.SetText(from, DateTime.Now.AddDays(-days).ToString("MM/dd/yyyy"));
+
+                var to = _find.ByName("SearchbyDateTo");
+                _main.Actions.SetText(to, DateTime.Now.ToString("MM/dd/yyyy"));
+
+                var doctype = _find.ByName("availSearchDocType");
+                _main.Actions.SelectDropDown(doctype, "FEDERAL TAX LIEN");
+                _main.Actions.InvokeScript("addDocType()");
+                _main.Actions.SelectDropDown(doctype, "STATE TAX LIEN");
+                _main.Actions.InvokeScript("addDocType()");
+
+                var pagesize = _find.ByAttributes("value=200");
+                if (pagesize != null)
+                    _main.Actions.Click(pagesize);
+
+
+
+                var clientid = _main.ClientId;
+
+                _manager.DialogMonitor.AddDialog(new AlertDialog(_main,DialogButton.OK));
+                _manager.DialogMonitor.Start();
+
+                _main.Actions.InvokeScript("submitForm()");
+
+
+                if (!AreRecordsToProcess())
+                {
+                    throw new Exception("No records to process");
+                }
+                _manager.DialogMonitor.Stop();
+
+                foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != clientid))
+                    _manager.RemoveBrowser(browser.ClientId);
+            }
+            finally
+            {
+                foreach (var browse in _manager.Browsers)
+                {
+                    browse.Close();
+                }
+            }
 
         }
 
@@ -170,7 +185,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 {
                     try
                     {
-                        lead.Document.Pages = Convert.ToInt32(docpages.GetNextSibling().TextContent);
+                        lead.Document.Pages = Convert.ToInt32(docpages.TextContent);
                     }
                     catch (Exception)
                     {
@@ -229,7 +244,48 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 //add event listener
                 AddListener();
                 _main.Actions.Click(imageclick);
+                //just wait for it to finish loading
                 var documentfound = WaitForJavaApplet();
+                
+                if (lead.Document.Pages > 0)
+                {
+                    RemoveListener();
+                    //try and use the save button
+                    AddListener(Properties.Settings.Default.downloadpath);
+                    int x = _manager.ActiveBrowser.Window.Location.X + 522;
+                    int y = _manager.ActiveBrowser.Window.Location.Y + 100;
+
+                    if (!_manager.ActiveBrowser.Window.IsVisible)
+                    {
+                        _manager.ActiveBrowser.Window.SetFocus();
+                    }
+
+                    _manager.Desktop.Mouse.Click(MouseClickType.LeftClick, x, y );
+                    Thread.Sleep(100);
+                        _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+
+                    var path = Path.Combine(Properties.Settings.Default.pdfstore, lead.GetHashCode() + ".pdf");
+//                    var save = new SaveAsDialog(_manager.ActiveBrowser, DialogButton.SAVE, path, _manager.Desktop);
+//                    _manager.DialogMonitor.AddDialog(save);
+//                    _manager.DialogMonitor.Start();
+
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Space);
+                    Thread.Sleep(200);
+                    _manager.Desktop.KeyBoard.TypeText(path, 100 );
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
+                    _manager.Desktop.KeyBoard.KeyPress(Keys.Enter);
+                    //handle save pop up
+
+
+                    //handle file download pop up
+                    _manager.DialogMonitor.Stop();
+                }
+
 
                 var test = _manager.ActiveBrowser.Url;
                 Console.WriteLine(test);
