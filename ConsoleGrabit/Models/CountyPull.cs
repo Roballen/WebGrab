@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace ConsoleGrabit.Models
 {
+
+
+    public enum CountyPullStatus
+    {
+        Partial, Complete, Error, DailyMaximumReached
+    }
+
     public class CountyPull
     {
         public DateTime Time
@@ -29,6 +36,14 @@ namespace ConsoleGrabit.Models
             set { _leads = value; }
         }
 
+
+        public CountyPullStatus Status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+
+        private CountyPullStatus _status;
         private DateTime _time;
         private string _county = "";
         private IList<Message> _messages;
@@ -40,6 +55,7 @@ namespace ConsoleGrabit.Models
             _messages = new List<Message>();
             _leads = new List<Lead>();
             _county = "";
+            _status = CountyPullStatus.Complete; //start complete and work backwards.
         }
     }
 }

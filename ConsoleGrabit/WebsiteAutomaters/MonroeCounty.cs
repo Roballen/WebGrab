@@ -19,8 +19,8 @@ namespace ConsoleGrabit.WebsiteAutomaters
             SetUp();
             _main.NavigateTo(@"https://gov.propertyinfo.com/wam3/loginForm.asp?iWAMid=30&a=true");
 
-            SetTextByFieldName("txtUserName", _config.username);
-            SetTextByFieldName("txtPassword", _config.password);
+            SetTextByFieldName("txtUserName", _config.Username);
+            SetTextByFieldName("txtPassword", _config.Password);
 
             var login = _find.ById("btn_login");
             _main.Actions.Click(login);
@@ -28,7 +28,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
             var searchtype = _find.ByContent("Date/Doc Type");
             _main.Actions.Click(searchtype);
 
-            var days = _config.daysback;
+            var days = _config.Daysback;
             if (days < 1)
                 days = 1;
 
@@ -129,15 +129,14 @@ namespace ConsoleGrabit.WebsiteAutomaters
             throw new NotImplementedException();
         }
 
-
         public bool AreRecordsToProcess()
         {
             return !_main.Url.Contains("SearchCriteria");
         }
 
-        public string County()
+        public Config Config()
         {
-            throw new NotImplementedException();
+            return _config;
         }
     }
 

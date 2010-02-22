@@ -4,23 +4,30 @@ using System.Linq;
 using System.Text;
 using ConsoleGrabit.Models;
 using Db4objects.Db4o;
+using Db4objects.Db4o.Linq;
 
 namespace ConsoleGrabit.Repository
 {
-    public class Db4oRepository
+    public class Db4oRepository : IRepository
     {
-        public CountyPull GetSingle()
+
+        private IObjectContainer _db;
+
+        public Db4oRepository(IObjectContainer container)
         {
-            try
-            {
-                IObjectContainer db = Db4oFactory.OpenFile()
-                IObjectContainer db = Db4oEmbedded.OpenFile(Db4oEmbedded.NewConfiguration(), Properties.Settings.Default.Db40Location);
-                db.
-            }
-            finally
-            {
-                
-            }
+            _db = container;
+        }
+
+        public int GetCompletedCount(string countyname, DateTime date)
+        {
+            return (from CountyPull o in _db
+                   where o.Time.Date == date.Date && o.Status == CountyPullStatus.Complete
+                   select o).Count();
+        }
+
+        public IList<CountyPull> GetMultipleByDate(DateTime date, string county)
+        {
+            return (from CountyPull o in _db where o.Time.Date == date.Date && o.County == county orderby o.Time descending  select o ).ToList();
         }
     }
 }

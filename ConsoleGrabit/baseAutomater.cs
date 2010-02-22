@@ -14,9 +14,13 @@ namespace ConsoleGrabit
 {
     public abstract class BaseAutomater
     {
+//        protected string _county;
+//        protected string _username;
+//        protected int _daysback;
+//        protected string _password;
+
+        protected Config _config;
         protected FileSystemWatcher _listener;
-        protected DateTime? _lastupdate;
-        protected int _pullstoday;
         protected IList<Lead> _leads;
         protected bool _waitingforimage;
         protected string _pdfstore;
@@ -28,23 +32,38 @@ namespace ConsoleGrabit
             set { _imagelocation = value; }
         }
 
-
+//        public string County
+//        {
+//            get { return _county; }
+//            set { _county = value; }
+//        }
 
         private CountyPull _pull;
 
-        protected WebconfigsConfig _config;
+        //protected WebconfigsConfig _config;
 
         protected BaseAutomater(WebconfigsConfig config)
         {
-            _config = config;
+
+            _config = new Config
+                          {
+                              Checkperday = config.checksperday,
+                              County = config.type,
+                              Daysback = config.daysback,
+                              Interval = config.interval,
+                              Password = config.password,
+                              Priority = config.priority,
+                              Starttime = config.starttime,
+                              Username = config.username
+                          };
+
+
             _pdfstore = Properties.Settings.Default.pdfstore;
 
             _listener = new FileSystemWatcher(Properties.Settings.Default.javacachedirectory);
             _listener.NotifyFilter = NotifyFilters.FileName;
             _listener.IncludeSubdirectories = true;
             _listener.Filter = "";
-            _lastupdate = null;
-            _pullstoday = 0;
             _leads = new List<Lead>();
             _waitingforimage = false;
         }

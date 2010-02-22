@@ -15,3 +15,9 @@ C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Utilities.dll
 C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\CountyRules.xml
 C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.dll
 C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.xml
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.Linq.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\StructureMap.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Cecil.FlowAnalysis.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Mono.Cecil.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.CS.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.CS.xml

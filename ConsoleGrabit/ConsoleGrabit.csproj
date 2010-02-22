@@ -52,9 +52,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.dll</HintPath>
     </Reference>
+    <Reference Include="Db4objects.Db4o.CS, Version=7.12.126.14142, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.CS.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq, Version=7.12.126.14142, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -77,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BootStapper.cs" />
     <Compile Include="MethodTimeOut.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="baseAutomater.cs" />
@@ -85,9 +98,11 @@
     </Compile>
     <Compile Include="Interfaces\IAutomationFramework.cs" />
     <Compile Include="Interfaces\IWebsiteAutomater.cs" />
+    <Compile Include="Models\Config.cs" />
     <Compile Include="Models\CountyPull.cs" />
     <Compile Include="Models\Lead.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="NameHelper.cs" />
     <Compile Include="ProcessManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,13 +113,14 @@
     </Compile>
     <Compile Include="Models\TaxDocument.cs" />
     <Compile Include="BaseWebAiiAutomater.cs" />
-    <Compile Include="Repository\Class1.cs" />
+    <Compile Include="Repository\DB4oServer.cs" />
     <Compile Include="Repository\Db4oRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="WebAutomaterFactory.cs" />
     <Compile Include="WebsiteAutomaters\BexarCounty.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WebsiteAutomaters\ColoradoSecretaryOfState.cs" />
     <Compile Include="WebsiteAutomaters\MonroeCounty.cs">
       <SubType>Code</SubType>
     </Compile>

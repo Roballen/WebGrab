@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assemblies", "assemblies", 
 		Dependencies\ArtOfTest.InternetExplorer.dll = Dependencies\ArtOfTest.InternetExplorer.dll
 		Dependencies\ArtOfTest.WebAii.AspNet.dll = Dependencies\ArtOfTest.WebAii.AspNet.dll
 		Dependencies\ArtOfTest.WebAii.dll = Dependencies\ArtOfTest.WebAii.dll
-		Dependencies\Interop.SHDocVw.dll = Dependencies\Interop.SHDocVw.dll
+		Dependencies\StructureMap.dll = Dependencies\StructureMap.dll
 		Dependencies\Utilities.dll = Dependencies\Utilities.dll
 	EndProjectSection
 EndProject

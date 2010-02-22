@@ -10,7 +10,7 @@ namespace ConsoleGrabit
     public class BaseWebAiiAutomater : BaseAutomater
     {
 
-        protected Manager _manager;
+        protected static Manager _manager = null;
         protected Browser _main;
         protected Browser _detail;
         protected Browser _documentbrowser;
@@ -18,7 +18,20 @@ namespace ConsoleGrabit
 
         public BaseWebAiiAutomater(WebconfigsConfig config) : base(config)
         {
+            if (_manager != null)
+            {
+                foreach (var broswer in _manager.Browsers)
+                {
+                    broswer.Close();
 
+                }
+                return;
+            }
+
+            var settings = new Settings(BrowserType.InternetExplorer, @"c:\log\") { ClientReadyTimeout = 60 * 1000 };
+
+            _manager = new Manager(settings);
+            _manager.Start();
         }
 
         protected Element GetNextSibling(Browser browser, Predicate<Element> predicate)
@@ -51,10 +64,10 @@ namespace ConsoleGrabit
 
         protected void SetUp()
         {
-            var settings = new Settings(BrowserType.InternetExplorer, @"c:\log\") { ClientReadyTimeout = 60 * 1000 };
-
-            _manager = new Manager(settings);
-            _manager.Start();
+//            var settings = new Settings(BrowserType.InternetExplorer, @"c:\log\") { ClientReadyTimeout = 60 * 1000 };
+//
+//            _manager = new Manager(settings);
+//            _manager.Start();
             _manager.LaunchNewBrowser();
             _manager.ActiveBrowser.AutoWaitUntilReady = true;
 
@@ -65,7 +78,7 @@ namespace ConsoleGrabit
         protected void SetTextByFieldName( string field, string value )
         {
             var el = _find.ByName(field);
-            _main.Actions.SetText(el, "value");
+            _main.Actions.SetText(el, value);
         }
 
     }

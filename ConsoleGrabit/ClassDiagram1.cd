@@ -3,7 +3,7 @@
   <Class Name="ConsoleGrabit.BaseAutomater" Collapsed="true">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAIUAAACAACABAAABEAAABAEACIoIAAAAAAAAIACAA=</HashCode>
+      <HashCode>EAAIEAAACAACABAAABEAAABAEACIoIAAAAAAAAIACAA=</HashCode>
       <FileName>baseAutomater.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
   <Class Name="ConsoleGrabit.ProcessManager" Collapsed="true">
     <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProcessManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -51,6 +51,9 @@
   </Class>
   <Class Name="ConsoleGrabit.Models.Address">
     <Position X="10" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAQAAAAEAAAgAAAKAAAACAQAAIAAAAAAAAABRQACAAA=</HashCode>
       <FileName>Models\Address.cs</FileName>
@@ -99,6 +102,9 @@
   </Class>
   <Class Name="ConsoleGrabit.Models.TaxDocument">
     <Position X="10" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQgAAAAAAAAAAQAIAAQCQAAAAAAAAQ=</HashCode>
       <FileName>Models\TaxDocument.cs</FileName>

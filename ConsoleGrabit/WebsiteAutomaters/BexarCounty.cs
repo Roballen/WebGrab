@@ -33,23 +33,17 @@ namespace ConsoleGrabit.WebsiteAutomaters
             return !_main.Url.Contains("SearchCriteria");
         }
 
-        public string County()
-        {
-            return _config.type;
-        }
-
         public void NavigateToLeadList()
         {
-            try
-            {
+
                 SetUp();
 
                 _main.NavigateTo(@"https://www.landata-cc.com/WAM/loginForm.asp?iSiteID=3&iWAMid=3");
                 var user = _find.ByName("txtUserName");
-                _main.Actions.SetText(user, _config.username);
+                _main.Actions.SetText(user, _config.Username);
 
                 var pass = _find.ByName("txtPassword");
-                _main.Actions.SetText(pass, _config.password);
+                _main.Actions.SetText(pass, _config.Password);
 
                 var login = _find.ByAttributes("class=clsHotKeyLink");
                 _main.Actions.Click(login);
@@ -62,7 +56,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 _main.Actions.Click(datebutton);
 
                 var from = _find.ByName("SearchbyDateFrom");
-                var days = _config.daysback;
+                var days = _config.Daysback;
                 if (days < 1)
                     days = 1;
                 _main.Actions.SetText(from, DateTime.Now.AddDays(-days).ToString("MM/dd/yyyy"));
@@ -98,20 +92,13 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
                 foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != clientid))
                     _manager.RemoveBrowser(browser.ClientId);
-            }
-            finally
-            {
-                foreach (var browse in _manager.Browsers)
-                {
-                    browse.Close();
-                }
-            }
+            
 
         }
 
         public IList<Lead> ProcessMultiple()
         {
-            _main = _manager.ActiveBrowser;
+            //_main = _manager.ActiveBrowser;
             //first scroll through and try to get the data from the ViewDetails pop up
             IList<Element> details = _find.AllByCustom(e => e.Content.Contains("Detail.asp"));
 
@@ -319,5 +306,15 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
             return false;
         }
+
+        #region IWebsiteAutomater Members
+
+
+        public Config Config()
+        {
+            return _config;
+        }
+
+        #endregion
     }
 }

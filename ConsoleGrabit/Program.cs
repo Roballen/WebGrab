@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using ArtOfTest.WebAii.Controls.HtmlControls;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ConsoleGrabit.Interfaces;
 using ConsoleGrabit.Models;
 using Db4objects.Db4o;
-using Microsoft.VisualStudio.TestTools.WebTesting;
-using Microsoft.VisualStudio.TestTools.WebTesting.Rules;
+using StructureMap;
 using Utilities;
 
 namespace ConsoleGrabit
@@ -24,6 +12,7 @@ namespace ConsoleGrabit
     {
         static void Main(string[] args)
         {
+            ConfigureStructureMap.BootStrapIt();
 
 //
 //            IObjectContainer db = Db4oEmbedded.OpenFile(Db4oEmbedded.NewConfiguration(), Properties.Settings.Default.Db40Location);
@@ -112,8 +101,7 @@ namespace ConsoleGrabit
             int wait = 750;
             while (!success && tries < retries)
             {
-                IObjectContainer db = Db4oEmbedded.OpenFile(Db4oEmbedded.NewConfiguration(),
-                                                            Properties.Settings.Default.Db40Location);
+                var db = ObjectFactory.GetInstance<IObjectContainer>();
                 try
                 {
                     db.Store(pull);

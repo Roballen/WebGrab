@@ -14,7 +14,7 @@ namespace ConsoleGrabit.Interfaces
         void NavigateToLeadList();
         IList<Lead> ProcessMultiple();
         bool AreRecordsToProcess();
-        string County();
+        Config Config();
 //        Lead ProcessDetail(object detail);
 //        Lead ProcessDocument(Lead lead, object detail);
         //Lead ProcessSingle();
