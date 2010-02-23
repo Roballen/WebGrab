@@ -220,6 +220,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
         private bool GetDocument(Element element, ref Lead lead)
         {
+            var documentdound = false;
             try
             {
                 var detailrow = GetFirstParentByTagName(element, "tr");
@@ -229,18 +230,19 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 lead.Document.Url = GetUrlFromJavaPopHref(imageclick.Content);
 
                 //add event listener
-                AddListener();
+                //AddListener();
                 _main.Actions.Click(imageclick);
                 //just wait for it to finish loading
-                var documentfound = WaitForJavaApplet();
+                Thread.Sleep(1000*15);
+                //documentdound = WaitForJavaApplet(););
                 
                 if (lead.Document.Pages > 0)
                 {
-                    RemoveListener();
+                    //RemoveListener();
                     //try and use the save button
-                    AddListener(Properties.Settings.Default.downloadpath);
+                    //AddListener(Properties.Settings.Default.downloadpath);
                     int x = _manager.ActiveBrowser.Window.Location.X + 522;
-                    int y = _manager.ActiveBrowser.Window.Location.Y + 100;
+                    int y = _manager.ActiveBrowser.Window.Location.Y + 130;
 
                     if (!_manager.ActiveBrowser.Window.IsVisible)
                     {
@@ -255,7 +257,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
 
-                    var path = Path.Combine(Properties.Settings.Default.pdfstore, lead.GetHashCode() + ".pdf");
+                    var path = Path.Combine(Properties.Settings.Default.pdfstore, lead.GetHashCode() + ".tif");
 //                    var save = new SaveAsDialog(_manager.ActiveBrowser, DialogButton.SAVE, path, _manager.Desktop);
 //                    _manager.DialogMonitor.AddDialog(save);
 //                    _manager.DialogMonitor.Start();
@@ -268,31 +270,33 @@ namespace ConsoleGrabit.WebsiteAutomaters
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Enter);
                     //handle save pop up
 
+                    documentdound = true;
 
                     //handle file download pop up
                     _manager.DialogMonitor.Stop();
+
                 }
 
 
                 var test = _manager.ActiveBrowser.Url;
                 Console.WriteLine(test);
-                if (!documentfound)
-                {
+//                if (!documentfound)
+//                {
                     //try once more
-                    foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != _main.ClientId))
-                    {
-                        browser.Close();
-                    }
-                    _main.Actions.Click(imageclick);
-                    WaitForJavaApplet();
-                }
+//                    foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != _main.ClientId))
+//                    {
+//                        browser.Close();
+//                    }
+//                    _main.Actions.Click(imageclick);
+//                    WaitForJavaApplet();
+//                }
 
 
                 foreach (var browser in _manager.Browsers.Where(browser => browser.ClientId != _main.ClientId))
                 {
                     browser.Close();
                 }
-                return documentfound;
+                return documentdound;
             }
             catch (Exception e)
             {

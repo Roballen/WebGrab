@@ -11,41 +11,31 @@
     <RecentFiles>
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Address.cs" caret="1716" fromTop="37" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Interfaces/f:IAutomationFramework.cs" caret="181" fromTop="8" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Lead.cs" caret="2211" fromTop="16" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:TaxDocument.cs" caret="437" fromTop="20" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Message.cs" caret="579" fromTop="23" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Properties/f:Settings.Designer.cs" caret="2813" fromTop="16" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="3567" fromTop="29" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:app.config" caret="0" fromTop="0" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="120" fromTop="1" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Interfaces/f:IWebsiteAutomater.cs" caret="338" fromTop="12" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:CountyPull.cs" caret="598" fromTop="18" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BaseWebAiiAutomater.cs" caret="443" fromTop="17" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebAutomaterFactory.cs" caret="1913" fromTop="26" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="4536" fromTop="136" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="1447" fromTop="10" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ProcessManager.cs" caret="356" fromTop="13" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:IRepository.cs" caret="170" fromTop="7" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="1786" fromTop="35" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="680" fromTop="7" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="231" fromTop="10" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="349" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:app.config" caret="888" fromTop="12" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:CountyPull.cs" caret="985" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="786" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BootStapper.cs" caret="1197" fromTop="26" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebAutomaterFactory.cs" caret="1019" fromTop="19" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ProcessManager.cs" caret="2066" fromTop="14" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:NameHelper.cs" caret="0" fromTop="0" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="270" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="8064" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="4592" fromTop="126" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="772" fromTop="13" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BaseWebAiiAutomater.cs" caret="1787" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="3120" fromTop="89" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8999" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="435" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:TaxDocument.cs" caret="0" fromTop="0" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Lead.cs" caret="760" fromTop="6" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="10885" fromTop="18" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="10860" fromTop="17" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="9317" fromTop="22" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="9223" fromTop="16" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="1126" fromTop="20" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="1798" fromTop="16" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="314" fromTop="17" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="298" fromTop="10" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="1786" fromTop="31" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="1265" fromTop="14" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="1092" fromTop="6" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="4021" fromTop="85" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="3680" fromTop="32" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="120" fromTop="1" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2586" fromTop="26" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2250" fromTop="19" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:IRepository.cs" caret="0" fromTop="0" />
@@ -62,6 +52,19 @@
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="1026" fromTop="43" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="398" fromTop="13" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="231" fromTop="10" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:app.config" caret="888" fromTop="12" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="8042" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="7790" fromTop="1" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11495" fromTop="17" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11167" fromTop="2" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11042" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8429" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="10935" fromTop="12" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11825" fromTop="14" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="10225" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="9465" fromTop="18" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8999" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="435" fromTop="3" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -160,7 +163,7 @@
       <Item value="HtmlWait" priority="0" />
       <Item value="while" priority="2" />
       <Item value="Browser`0" priority="6" />
-      <Item value="Thread`0" priority="2" />
+      <Item value="Thread`0" priority="3" />
       <Item value="browser" priority="7" />
       <Item value="clientid" priority="1" />
       <Item value="int" priority="4" />
@@ -232,7 +235,7 @@
       <Item value="generaltab" priority="0" />
       <Item value="nametable" priority="4" />
       <Item value="element" priority="4" />
-      <Item value="Path`0" priority="6" />
+      <Item value="Path`0" priority="7" />
       <Item value="FileWacher" priority="0" />
       <Item value="ProcessPdf`0" priority="0" />
       <Item value="File`0" priority="0" />
@@ -317,7 +320,7 @@
       <Item value="Predicate" priority="0" />
       <Item value="firsttarget" priority="2" />
       <Item value="_manager" priority="16" />
-      <Item value="_main" priority="2" />
+      <Item value="_main" priority="3" />
       <Item value="_find" priority="1" />
       <Item value="GetNextSibling`0" priority="2" />
       <Item value="_document" priority="0" />
@@ -334,7 +337,7 @@
       <Item value="Message" priority="0" />
       <Item value="Messagetype" priority="0" />
       <Item value="Message1" priority="0" />
-      <Item value="documentfound" priority="0" />
+      <Item value="documentfound" priority="1" />
       <Item value="MouseClickType`0" priority="0" />
       <Item value="x" priority="0" />
       <Item value="Keys`0" priority="1" />
@@ -357,6 +360,12 @@
       <Item value="IObjectContainer`0" priority="0" />
       <Item value="Db4oFactory`0" priority="0" />
       <Item value="namespace" priority="0" />
+      <Item value="image" priority="3" />
+      <Item value="Save" priority="0" />
+      <Item value="_imagelocation" priority="1" />
+      <Item value="imageel" priority="0" />
+      <Item value="stream" priority="0" />
+      <Item value="documentdound" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:IEAutomation.IEDriver">
       <Item value="Navigate`0" priority="0" />
@@ -439,7 +448,7 @@
     <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Browser">
       <Item value="NavigateTo`0" priority="1" />
       <Item value="Find" priority="23" />
-      <Item value="Actions" priority="17" />
+      <Item value="Actions" priority="18" />
       <Item value="IsReady`0" priority="0" />
       <Item value="WaitUntilReady`0" priority="4" />
       <Item value="AutoWaitUntilReady" priority="0" />
@@ -469,6 +478,7 @@
       <Item value="Click`0" priority="5" />
       <Item value="SelectDropDown`0" priority="2" />
       <Item value="InvokeScript`1" priority="2" />
+      <Item value="ScrollToVisible`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ArtOfTest.WebAii.ObjectModel.Element">
       <Item value="TextContent" priority="6" />
@@ -502,7 +512,7 @@
       <Item value="Where`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Threading.Thread">
-      <Item value="Sleep`0" priority="4" />
+      <Item value="Sleep`0" priority="5" />
       <Item value="CurrentThread" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ConsoleGrabit.Lead">
@@ -576,7 +586,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.IO.Path">
       <Item value="Combine`0" priority="5" />
-      <Item value="GetExtension`0" priority="0" />
+      <Item value="GetExtension`0" priority="1" />
       <Item value="GetFileNameWithoutExtension`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Reflection.Assembly">
@@ -695,6 +705,13 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Db4objects.Db4o.Db4oFactory">
       <Item value="OpenFile`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.Controls.HtmlControls.HtmlImage">
+      <Item value="Download`0" priority="0" />
+      <Item value="Src" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Image">
+      <Item value="Save`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ConsoleGrabit.Interfaces;
 using ConsoleGrabit.Models;
+using Utilities;
 
 namespace ConsoleGrabit.WebsiteAutomaters
 {
@@ -182,8 +185,15 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 var image = new HtmlImage(imageel);
                 if (image != null)
                 {
-                    _imagelocation = Path.Combine(Properties.Settings.Default.pdfstore, lead.GetHashCode() + ".pdf");
-                    image.Capture(_imagelocation, _imagelocation);
+                    _main.Actions.ScrollToVisible(imageel);
+                    _imagelocation = Path.Combine(Properties.Settings.Default.pdfstore, lead.GetHashCode() + Path.GetExtension(image.Src));
+
+                    WebRequest req = WebRequest.Create(image.Src);
+                    WebResponse response = req.GetResponse();
+                    Image.FromStream(response.GetResponseStream()).Save(_imagelocation);
+                    
+
+
                     return true;
 
                 }

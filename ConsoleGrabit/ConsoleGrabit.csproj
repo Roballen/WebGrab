@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -32,33 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArtOfTest.Common, Version=2.0.7.0, Culture=neutral, PublicKeyToken=14a0200bfcbb7b62, processorArchitecture=MSIL">
+    <Reference Include="ArtOfTest.Common, Version=2.0.8.0, Culture=neutral, PublicKeyToken=14a0200bfcbb7b62, processorArchitecture=MSIL" />
+    <Reference Include="ArtOfTest.InternetExplorer, Version=2.0.8.0, Culture=neutral, PublicKeyToken=5339893a7cefe4d6, processorArchitecture=MSIL" />
+    <Reference Include="ArtOfTest.WebAii, Version=2.0.8.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL" />
+    <Reference Include="ArtOfTest.WebAii.AspNet, Version=2.0.8.0, Culture=neutral, PublicKeyToken=787736db708a4086, processorArchitecture=MSIL" />
+    <Reference Include="Db4objects.Db4o, Version=7.12.132.14217, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\ArtOfTest.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.dll</HintPath>
     </Reference>
-    <Reference Include="ArtOfTest.InternetExplorer, Version=2.0.7.0, Culture=neutral, PublicKeyToken=5339893a7cefe4d6, processorArchitecture=MSIL">
+    <Reference Include="Db4objects.Db4o.CS, Version=7.12.132.14217, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\ArtOfTest.InternetExplorer.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.CS.dll</HintPath>
     </Reference>
-    <Reference Include="ArtOfTest.WebAii, Version=2.0.7.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+    <Reference Include="Db4objects.Db4o.Linq, Version=7.12.132.14217, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\ArtOfTest.WebAii.dll</HintPath>
-    </Reference>
-    <Reference Include="ArtOfTest.WebAii.AspNet, Version=2.0.7.0, Culture=neutral, PublicKeyToken=787736db708a4086, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\ArtOfTest.WebAii.AspNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Db4objects.Db4o, Version=7.12.126.14142, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.dll</HintPath>
-    </Reference>
-    <Reference Include="Db4objects.Db4o.CS, Version=7.12.126.14142, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.CS.dll</HintPath>
-    </Reference>
-    <Reference Include="Db4objects.Db4o.Linq, Version=7.12.126.14142, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.Linq.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\db4o\db4o-7.12\bin\net-3.5\Db4objects.Db4o.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -138,6 +126,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
