@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Webconfigs>
-  <Config type="BexarCounty" starttime="09:00:00" checksperday="0" username="jsmithee" password="2020tr" priority="1" interval="3" daysback="5" />
-  <Config type="MonroeCounty" starttime="09:00:00" checksperday="0" daysback ="5" username="jsmithee" password="11800Ridge" interval="4" priority="1" />
-  <Config type="ColoradoSecretaryOfState" starttime="06:00:00" checksperday="3" daysback ="5" username="2020mmj" password="coacctcode" interval="4" priority="1" />
+  <Config type="BexarCounty" starttime="06:00:00" checksperday="0" username="jsmithee" password="2020tr" priority="1" interval="3" daysback="5" >
+    <Position name="SavePdf" xCoord="400" yCoord="110"></Position>
+    <Position name="Dummy" xCoord="10" yCoord="40"></Position>
+    <PerformanceTweak name="imageviewerload" seconds="30" />
+    <PerformanceTweak name="imagewaitafterload" seconds="8" />
+    <PerformanceTweak name="textdialogueload" seconds="1" />
+  </Config>
+  <Config type="MonroeCounty" starttime="06:00:00" checksperday="1" daysback ="5" username="jsmithee" password="11800Ridge" interval="4" priority="1" >
+    <Position name="SavePdf" xCoord="525" yCoord="250"></Position>
+    <PerformanceTweak name="imageviewerload" seconds="30" />
+    <PerformanceTweak name="imagewaitafterload" seconds="8" />
+    <PerformanceTweak name="textdialogueload" seconds="1" />
+  </Config>
+  <Config type="ColoradoSecretaryOfState" starttime="06:00:00" checksperday="0" daysback ="5" username="2020mmj" password="coacctcode" interval="4" priority="1" />
+  <Config type="Dummy" starttime="" checksperday="" daysback ="" username="" password="" interval="" priority="" />
 </Webconfigs>

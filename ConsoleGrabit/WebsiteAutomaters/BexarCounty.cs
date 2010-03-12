@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -194,7 +195,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                         var name = "";
                         if (namecells.Count > 0)
                         {
-                            name = namecells[0].InnerText;
+                            name = namecells[0].InnerText.UnEscapeXml();
                             if (name.Contains(","))
                             {
                                 var names = name.Split(',');
@@ -218,7 +219,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
             return lead;
         }
 
-        private bool GetDocument(Element element, ref Lead lead)
+        private bool GetDocument(Element element, ref Lead lead, bool viewerloaded)
         {
             var documentdound = false;
             try
@@ -233,7 +234,10 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 //AddListener();
                 _main.Actions.Click(imageclick);
                 //just wait for it to finish loading
-                Thread.Sleep(1000*15);
+                if (viewerloaded)
+                    Thread.Sleep(1000 * _config.Performancetweaks["imageviewerload"]);
+                else
+                    Thread.Sleep(1000 * _config.Performancetweaks["imagewaitafterload"]);
                 //documentdound = WaitForJavaApplet(););
                 
                 if (lead.Document.Pages > 0)
@@ -241,8 +245,8 @@ namespace ConsoleGrabit.WebsiteAutomaters
                     //RemoveListener();
                     //try and use the save button
                     //AddListener(Properties.Settings.Default.downloadpath);
-                    int x = _manager.ActiveBrowser.Window.Location.X + 522;
-                    int y = _manager.ActiveBrowser.Window.Location.Y + 130;
+                    int x = _manager.ActiveBrowser.Window.Location.X + _config.Positionals["SavePdf"].X;
+                    int y = _manager.ActiveBrowser.Window.Location.Y + _config.Positionals["SavePdf"].Y;
 
                     if (!_manager.ActiveBrowser.Window.IsVisible)
                     {
@@ -250,7 +254,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                     }
 
                     _manager.Desktop.Mouse.Click(MouseClickType.LeftClick, x, y );
-                    Thread.Sleep(100);
+                    Thread.Sleep(200);
                         _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
@@ -263,7 +267,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
 //                    _manager.DialogMonitor.Start();
 
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Space);
-                    Thread.Sleep(200);
+                    Thread.Sleep(_config.Performancetweaks["textdialogueload"] * 1000);
                     _manager.Desktop.KeyBoard.TypeText(path, 100 );
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);

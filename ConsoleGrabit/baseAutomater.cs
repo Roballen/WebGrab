@@ -45,25 +45,56 @@ namespace ConsoleGrabit
         protected BaseAutomater(WebconfigsConfig config)
         {
 
-            _config = new Config
-                          {
-                              Checkperday = config.checksperday,
-                              County = config.type,
-                              Daysback = config.daysback,
-                              Interval = config.interval,
-                              Password = config.password,
-                              Priority = config.priority,
-                              Starttime = config.starttime,
-                              Username = config.username
-                          };
+            _config = new Config() { County = config.type, Username = config.username, Password = config.password};
+            if (config.checksperday.IsInteger())
+                _config.Checkperday = Convert.ToInt16(config.checksperday);
+            if (config.daysback.IsInteger())
+                _config.Daysback = Convert.ToInt16(config.daysback);
+            if (config.interval.IsInteger())
+                _config.Interval = Convert.ToInt16(config.interval);
+            if (config.priority.IsInteger())
+                _config.Priority = Convert.ToInt16(config.priority);
 
+            try
+            {
+                _config.Starttime = DateTime.Parse(config.starttime);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            if (config.Position != null)
+            {
+                foreach (var positional in config.Position)
+                {
+                    _config.Positionals.Add(positional.name, new Coordinate() { X = positional.xCoord, Y = positional.yCoord });
+
+                }
+            }
+
+            if (config.PerformanceTweak != null)
+            {
+                foreach (var tweak in config.PerformanceTweak)
+                {
+                    _config.Performancetweaks.Add( tweak.name, tweak.seconds );
+                }
+            }
 
             _pdfstore = Properties.Settings.Default.pdfstore;
 
-            _listener = new FileSystemWatcher(Properties.Settings.Default.javacachedirectory);
-            _listener.NotifyFilter = NotifyFilters.FileName;
-            _listener.IncludeSubdirectories = true;
-            _listener.Filter = "";
+
+            if (FileTools.SDirectoryExists(Properties.Settings.Default.javacachedirectory))
+            {
+                _listener = new FileSystemWatcher(Properties.Settings.Default.javacachedirectory);
+                _listener.NotifyFilter = NotifyFilters.FileName;
+                _listener.IncludeSubdirectories = true;
+                _listener.Filter = "";
+            }
+            else
+                Console.WriteLine("!!!!!!!!!ERROR, Please check config location of java cache directory, it appears incorrect");
+
+
             _leads = new List<Lead>();
             _waitingforimage = false;
         }
@@ -130,20 +161,7 @@ namespace ConsoleGrabit
 
         protected void WaitForFile(string fullPath)
         {
-            while ( true )
-            {
-                try
-                {
-                    using (var stream = new StreamReader(fullPath))
-                    {
-                        break;
-                    }
-                }
-                catch
-                {
-                    Thread.Sleep(500);
-                }
-            }
+            FileTools.WaitForFile(fullPath,45);
         }
 
         protected  string GetFileTypeFromIndex(string indextargetfile)
@@ -183,6 +201,15 @@ namespace ConsoleGrabit
             
             return url;
  }
+
+        protected string GetUrlFromJavaPopHrefWithQuote(string href)
+        {
+            int firstindex = href.IndexOf("\"");
+            int secondindex = href.IndexOf("\"", firstindex + 1);
+            var url = href.Substring(firstindex + 1, secondindex - firstindex-1);
+
+            return url;
+        }
 
     }
 }

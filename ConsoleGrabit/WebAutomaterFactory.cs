@@ -28,6 +28,7 @@ namespace ConsoleGrabit
 
         public static WebconfigsConfig GetIndividualConfig(string type)
         {
+
             return (from config in _webconfigs.Config where config.type == type select config).Single();
         }
 

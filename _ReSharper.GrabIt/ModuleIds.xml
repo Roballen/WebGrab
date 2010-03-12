@@ -1,3 +1,4 @@
 <Modules>
   <Module PersistentId="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D" ModuleId="ConsoleGrabit" />
+  <Module PersistentId="8B49339E-68ED-4F08-8DAD-5367A4F89D0C" ModuleId="WebGrabTests" />
 </Modules>

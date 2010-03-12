@@ -9,62 +9,66 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Address.cs" caret="1716" fromTop="37" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Interfaces/f:IAutomationFramework.cs" caret="181" fromTop="8" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Message.cs" caret="579" fromTop="23" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Properties/f:Settings.Designer.cs" caret="2813" fromTop="16" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Interfaces/f:IWebsiteAutomater.cs" caret="338" fromTop="12" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:IRepository.cs" caret="170" fromTop="7" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:MethodTimeOut.cs" caret="1786" fromTop="35" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:app.config" caret="888" fromTop="12" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:CountyPull.cs" caret="985" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="786" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BootStapper.cs" caret="1197" fromTop="26" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebAutomaterFactory.cs" caret="1019" fromTop="19" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ProcessManager.cs" caret="2066" fromTop="14" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:NameHelper.cs" caret="0" fromTop="0" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="270" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="8064" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="4592" fromTop="126" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="772" fromTop="13" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BaseWebAiiAutomater.cs" caret="1787" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="3120" fromTop="89" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8999" fromTop="3" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="435" fromTop="3" />
       <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:TaxDocument.cs" caret="0" fromTop="0" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Lead.cs" caret="760" fromTop="6" />
+      <File id="8B49339E-68ED-4F08-8DAD-5367A4F89D0C/f:AuthoringTests.txt" caret="0" fromTop="0" />
+      <File id="d:Miscellaneous Files/f:StringTools.cs/l:C!?git?dev?Utilities?Utilities?StringTools.cs" caret="34075" fromTop="16" />
+      <File id="8B49339E-68ED-4F08-8DAD-5367A4F89D0C/f:NameParsingTests.cs" caret="3254" fromTop="15" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:NameHelper.cs" caret="5568" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BootStapper.cs" caret="892" fromTop="26" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:PDFToTiff.cs" caret="235" fromTop="8" />
+      <File id="8B49339E-68ED-4F08-8DAD-5367A4F89D0C/f:ImageOCRTest.cs" caret="330" fromTop="14" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="453" fromTop="13" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="0" fromTop="0" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:IRepository.cs" caret="293" fromTop="10" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2261" fromTop="0" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ImageOCR.cs" caret="884" fromTop="35" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Config.cs" caret="284" fromTop="15" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebAutomaterFactory.cs" caret="1915" fromTop="32" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BaseWebAiiAutomater.cs" caret="2846" fromTop="34" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="473" fromTop="5" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ProcessManager.cs" caret="2141" fromTop="19" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="2502" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8784" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="6616" fromTop="19" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Lead.cs" caret="773" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Message.cs" caret="193" fromTop="9" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="4714" fromTop="18" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="3680" fromTop="32" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2586" fromTop="26" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:Program.cs" caret="2250" fromTop="19" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:IRepository.cs" caret="0" fromTop="0" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2214" fromTop="24" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ProcessManager.cs" caret="1043" fromTop="23" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:ProcessManager.cs" caret="344" fromTop="12" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:IRepository.cs" caret="152" fromTop="6" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="228" fromTop="8" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="231" fromTop="17" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="231" fromTop="18" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="1026" fromTop="34" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="1026" fromTop="7" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="1026" fromTop="3" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="1026" fromTop="43" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:DB4oServer.cs" caret="398" fromTop="13" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Repository/f:Db4oRepository.cs" caret="231" fromTop="10" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:app.config" caret="888" fromTop="12" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="8042" fromTop="16" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:ColoradoSecretaryOfState.cs" caret="7790" fromTop="1" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11495" fromTop="17" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11167" fromTop="2" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11042" fromTop="16" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8429" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="10935" fromTop="12" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="11825" fromTop="14" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="10225" fromTop="9" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="9465" fromTop="18" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:BexarCounty.cs" caret="8999" fromTop="3" />
-      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="435" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Config.cs" caret="1707" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Config.cs" caret="374" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="1792" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="1792" fromTop="18" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="1942" fromTop="20" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2060" fromTop="7" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:WebAutomaterFactory.cs" caret="782" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="1179" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2060" fromTop="16" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:Models/f:Config.cs" caret="216" fromTop="6" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2091" fromTop="18" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2304" fromTop="22" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2926" fromTop="12" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="2759" fromTop="12" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="417" fromTop="5" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:CountyRules.xml" caret="120" fromTop="1" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BaseWebAiiAutomater.cs" caret="3053" fromTop="12" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:BaseWebAiiAutomater.cs" caret="2846" fromTop="13" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="5747" fromTop="23" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="3895" fromTop="23" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="1841" fromTop="11" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="6113" fromTop="6" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="3761" fromTop="23" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="2478" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="1415" fromTop="3" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="6895" fromTop="20" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/f:baseAutomater.cs" caret="6855" fromTop="10" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="3043" fromTop="7" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="3477" fromTop="17" />
+      <File id="3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D/d:WebsiteAutomaters/f:MonroeCounty.cs" caret="4241" fromTop="3" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -82,13 +86,13 @@
     <ItemStatistics item="Default">
       <Item value="using" priority="8" />
       <Item value="driver" priority="1" />
-      <Item value="if" priority="46" />
+      <Item value="if" priority="72" />
       <Item value="m_IEFoundBrowsers" priority="0" />
       <Item value="m_Proc" priority="1" />
-      <Item value="null" priority="17" />
+      <Item value="null" priority="19" />
       <Item value="request22" priority="0" />
       <Item value="WebRequest`0" priority="4" />
-      <Item value="new" priority="44" />
+      <Item value="new" priority="64" />
       <Item value="wr" priority="2" />
       <Item value="WebClient`0" priority="0" />
       <Item value="WebClient" priority="0" />
@@ -98,17 +102,17 @@
       <Item value="hr" priority="1" />
       <Item value="HttpWebResponse`0" priority="1" />
       <Item value="CookieCollection`0" priority="1" />
-      <Item value="string" priority="42" />
-      <Item value="Dictionary" priority="0" />
-      <Item value="public" priority="22" />
+      <Item value="string" priority="62" />
+      <Item value="Dictionary" priority="2" />
+      <Item value="public" priority="35" />
       <Item value="WebPostRequest`0" priority="1" />
       <Item value="_request" priority="5" />
       <Item value="_querydata" priority="2" />
       <Item value="Dictionary&lt;string,string&gt;" priority="0" />
-      <Item value="void" priority="16" />
+      <Item value="void" priority="19" />
       <Item value="String`0" priority="3" />
       <Item value="key" priority="0" />
-      <Item value="value" priority="0" />
+      <Item value="value" priority="3" />
       <Item value="Collection" priority="0" />
       <Item value="Collection&lt;string&gt;" priority="0" />
       <Item value="typeof" priority="1" />
@@ -118,12 +122,12 @@
       <Item value="_response" priority="1" />
       <Item value="StreamReader`0" priority="0" />
       <Item value="StreamReader" priority="0" />
-      <Item value="return" priority="19" />
+      <Item value="return" priority="22" />
       <Item value="sr" priority="0" />
       <Item value="WebPostRequest" priority="0" />
       <Item value="wpr" priority="5" />
-      <Item value="var" priority="46" />
-      <Item value="Console`0" priority="7" />
+      <Item value="var" priority="64" />
+      <Item value="Console`0" priority="8" />
       <Item value="response" priority="0" />
       <Item value="Settings" priority="0" />
       <Item value="BrowserType`0" priority="0" />
@@ -132,19 +136,19 @@
       <Item value="settings" priority="2" />
       <Item value="manager" priority="72" />
       <Item value="user" priority="0" />
-      <Item value="Element`0" priority="34" />
-      <Item value="select" priority="2" />
+      <Item value="Element`0" priority="37" />
+      <Item value="select" priority="3" />
       <Item value="Find`0" priority="7" />
       <Item value="e" priority="23" />
       <Item value="datebutton" priority="0" />
       <Item value="from" priority="1" />
-      <Item value="DateTime`0" priority="5" />
+      <Item value="DateTime`0" priority="6" />
       <Item value="doctype" priority="0" />
       <Item value="pagesize" priority="1" />
-      <Item value="true" priority="4" />
-      <Item value="foreach" priority="12" />
-      <Item value="private" priority="45" />
-      <Item value="Lead`0" priority="6" />
+      <Item value="true" priority="9" />
+      <Item value="foreach" priority="28" />
+      <Item value="private" priority="53" />
+      <Item value="Lead`0" priority="8" />
       <Item value="_city" priority="2" />
       <Item value="_zip" priority="2" />
       <Item value="_streetaddress" priority="1" />
@@ -155,7 +159,7 @@
       <Item value="_first" priority="0" />
       <Item value="_debt" priority="1" />
       <Item value="ICollection" priority="1" />
-      <Item value="in" priority="1" />
+      <Item value="in" priority="2" />
       <Item value="details" priority="0" />
       <Item value="row" priority="1" />
       <Item value="content" priority="3" />
@@ -166,26 +170,26 @@
       <Item value="Thread`0" priority="3" />
       <Item value="browser" priority="7" />
       <Item value="clientid" priority="1" />
-      <Item value="int" priority="4" />
-      <Item value="IList" priority="4" />
+      <Item value="int" priority="8" />
+      <Item value="IList" priority="11" />
       <Item value="HtmlTableRow`0" priority="3" />
       <Item value="date" priority="1" />
       <Item value="detailbrowser" priority="19" />
-      <Item value="lead" priority="18" />
+      <Item value="lead" priority="33" />
       <Item value="Lead" priority="1" />
-      <Item value="WebconfigsConfig`0" priority="6" />
+      <Item value="WebconfigsConfig`0" priority="9" />
       <Item value="BexarCounty`0" priority="0" />
-      <Item value="config" priority="7" />
-      <Item value="_config" priority="9" />
-      <Item value="protected" priority="17" />
+      <Item value="config" priority="20" />
+      <Item value="_config" priority="14" />
+      <Item value="protected" priority="19" />
       <Item value="delegate" priority="4" />
       <Item value="Type`0" priority="3" />
-      <Item value="List" priority="11" />
+      <Item value="List" priority="15" />
       <Item value="Scheduler`0" priority="0" />
       <Item value="_website" priority="0" />
       <Item value="List&lt;IWebsiteAutomater&gt;" priority="1" />
       <Item value="abstract" priority="1" />
-      <Item value="class" priority="0" />
+      <Item value="class" priority="1" />
       <Item value="BaseAutomater`0" priority="11" />
       <Item value="_lastupdate" priority="3" />
       <Item value="_pullstoday" priority="3" />
@@ -193,15 +197,15 @@
       <Item value="AssemblyLoadEventArgs`0" priority="1" />
       <Item value="CannotUnloadAppDomainException`0" priority="0" />
       <Item value="assembly" priority="1" />
-      <Item value="type" priority="9" />
+      <Item value="type" priority="10" />
       <Item value="is" priority="4" />
       <Item value="EnvironmentVariableTarget`0" priority="0" />
       <Item value="as" priority="1" />
       <Item value="IWebsiteAutomater`0" priority="4" />
       <Item value="websites" priority="3" />
-      <Item value="static" priority="6" />
+      <Item value="static" priority="9" />
       <Item value="Webconfigs`0" priority="5" />
-      <Item value="_webconfigs" priority="3" />
+      <Item value="_webconfigs" priority="4" />
       <Item value="Webconfigs" priority="0" />
       <Item value="XmlSerializer" priority="0" />
       <Item value="location" priority="1" />
@@ -216,15 +220,15 @@
       <Item value="configlocation" priority="7" />
       <Item value="Utilities" priority="2" />
       <Item value="Length" priority="1" />
-      <Item value="FileTools`0" priority="7" />
-      <Item value="else" priority="5" />
+      <Item value="FileTools`0" priority="9" />
+      <Item value="else" priority="11" />
       <Item value="test" priority="0" />
       <Item value="throw" priority="0" />
       <Item value="ApplicationException" priority="0" />
       <Item value="continue" priority="3" />
       <Item value="websiteAutomater" priority="3" />
-      <Item value="bool" priority="9" />
-      <Item value="false" priority="8" />
+      <Item value="bool" priority="12" />
+      <Item value="false" priority="10" />
       <Item value="pull" priority="1" />
       <Item value="interval" priority="1" />
       <Item value="virtual" priority="0" />
@@ -235,10 +239,10 @@
       <Item value="generaltab" priority="0" />
       <Item value="nametable" priority="4" />
       <Item value="element" priority="4" />
-      <Item value="Path`0" priority="7" />
+      <Item value="Path`0" priority="9" />
       <Item value="FileWacher" priority="0" />
       <Item value="ProcessPdf`0" priority="0" />
-      <Item value="File`0" priority="0" />
+      <Item value="File`0" priority="1" />
       <Item value="ext" priority="2" />
       <Item value="FtpStatusCode`0" priority="0" />
       <Item value="GetFileTypeFromIndex`0" priority="0" />
@@ -272,7 +276,7 @@
       <Item value="HtmlControl" priority="0" />
       <Item value="htmlnametable" priority="0" />
       <Item value="namecells" priority="2" />
-      <Item value="name" priority="3" />
+      <Item value="name" priority="9" />
       <Item value="headertables" priority="0" />
       <Item value="htmltable" priority="0" />
       <Item value="headertable" priority="7" />
@@ -283,7 +287,7 @@
       <Item value="ex" priority="0" />
       <Item value="HierarchyConstraint" priority="0" />
       <Item value="names" priority="3" />
-      <Item value="Count`1" priority="0" />
+      <Item value="Count`1" priority="3" />
       <Item value="tagname" priority="1" />
       <Item value="detailrow" priority="0" />
       <Item value="tablerow" priority="1" />
@@ -320,12 +324,12 @@
       <Item value="Predicate" priority="0" />
       <Item value="firsttarget" priority="2" />
       <Item value="_manager" priority="16" />
-      <Item value="_main" priority="3" />
-      <Item value="_find" priority="1" />
+      <Item value="_main" priority="12" />
+      <Item value="_find" priority="5" />
       <Item value="GetNextSibling`0" priority="2" />
       <Item value="_document" priority="0" />
       <Item value="TaxDocument" priority="0" />
-      <Item value="Convert`0" priority="0" />
+      <Item value="Convert`0" priority="1" />
       <Item value="try" priority="2" />
       <Item value="enum" priority="0" />
       <Item value="MessageType`0" priority="1" />
@@ -360,12 +364,93 @@
       <Item value="IObjectContainer`0" priority="0" />
       <Item value="Db4oFactory`0" priority="0" />
       <Item value="namespace" priority="0" />
-      <Item value="image" priority="3" />
+      <Item value="image" priority="9" />
       <Item value="Save" priority="0" />
       <Item value="_imagelocation" priority="1" />
       <Item value="imageel" priority="0" />
       <Item value="stream" priority="0" />
       <Item value="documentdound" priority="2" />
+      <Item value="input" priority="0" />
+      <Item value="precommatokens" priority="1" />
+      <Item value="commasplit" priority="6" />
+      <Item value="postcommatoken" priority="0" />
+      <Item value="totaltokens" priority="0" />
+      <Item value="mastertokens" priority="4" />
+      <Item value="nameshavecommas" priority="3" />
+      <Item value="isPerson" priority="7" />
+      <Item value="businesstokens" priority="0" />
+      <Item value="isBusiness" priority="1" />
+      <Item value="List&lt;string&gt;" priority="1" />
+      <Item value="precommaval" priority="1" />
+      <Item value="nameprefix" priority="0" />
+      <Item value="namesuffix" priority="0" />
+      <Item value="tok" priority="2" />
+      <Item value="TestMethod" priority="0" />
+      <Item value="people" priority="2" />
+      <Item value="NameHelper`0" priority="0" />
+      <Item value="ref" priority="0" />
+      <Item value="Assert`0" priority="0" />
+      <Item value="s" priority="3" />
+      <Item value="char" priority="0" />
+      <Item value="lastname" priority="6" />
+      <Item value="com" priority="0" />
+      <Item value="VARIABLE" priority="3" />
+      <Item value="struct" priority="0" />
+      <Item value="const" priority="0" />
+      <Item value="MODI" priority="1" />
+      <Item value="Document`0" priority="1" />
+      <Item value="Document" priority="1" />
+      <Item value="ImageOCR`0" priority="0" />
+      <Item value="_filename" priority="8" />
+      <Item value="filename" priority="6" />
+      <Item value="_modi" priority="9" />
+      <Item value="NotImplementedException`0" priority="0" />
+      <Item value="PDFToTiff`0" priority="0" />
+      <Item value="newfile" priority="1" />
+      <Item value="_filestream" priority="0" />
+      <Item value="IDocument`0" priority="2" />
+      <Item value="ILayout`0" priority="0" />
+      <Item value="MiLANGUAGES`0" priority="0" />
+      <Item value="fullPath" priority="0" />
+      <Item value="IImage`0" priority="0" />
+      <Item value="IWord`0" priority="1" />
+      <Item value="word" priority="2" />
+      <Item value="List&lt;IWord&gt;" priority="0" />
+      <Item value="_words" priority="1" />
+      <Item value="target" priority="0" />
+      <Item value="TextReader`0" priority="0" />
+      <Item value="MyWord`0" priority="0" />
+      <Item value="MyWord" priority="0" />
+      <Item value="Text" priority="0" />
+      <Item value="Line" priority="0" />
+      <Item value="IMiDocSearch`0" priority="0" />
+      <Item value="_search" priority="0" />
+      <Item value="MiDocSearch" priority="0" />
+      <Item value="search" priority="0" />
+      <Item value="addressPattern" priority="0" />
+      <Item value="IDictionary" priority="0" />
+      <Item value="Coordinate`0" priority="0" />
+      <Item value="_positionals" priority="0" />
+      <Item value="Dictionary&lt;string,Coordinate&gt;" priority="0" />
+      <Item value="County" priority="0" />
+      <Item value="Username" priority="0" />
+      <Item value="Password" priority="0" />
+      <Item value="positional" priority="10" />
+      <Item value="WebconfigsConfigPositionConfigsPosition`0" priority="1" />
+      <Item value="for" priority="0" />
+      <Item value="i" priority="1" />
+      <Item value="Coordinate" priority="1" />
+      <Item value="el" priority="1" />
+      <Item value="field" priority="3" />
+      <Item value="SetTextByFieldName`0" priority="0" />
+      <Item value="elements" priority="0" />
+      <Item value="resultset" priority="2" />
+      <Item value="resultsets" priority="2" />
+      <Item value="ProcessResultsPage`0" priority="2" />
+      <Item value="nextpage" priority="1" />
+      <Item value="resultset2" priority="1" />
+      <Item value="GetUrlFromJavaPopHrefWithQuote`0" priority="0" />
+      <Item value="GetFirstParentByTagName`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:IEAutomation.IEDriver">
       <Item value="Navigate`0" priority="0" />
@@ -388,7 +473,7 @@
       <Item value="GetResponse`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
-      <Item value="Add`0" priority="0" />
+      <Item value="Add`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
       <Item value="Format`0" priority="0" />
@@ -402,13 +487,18 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="Length" priority="2" />
-      <Item value="Contains`0" priority="8" />
+      <Item value="Contains`0" priority="13" />
       <Item value="Substring`0" priority="1" />
       <Item value="IndexOf`0" priority="1" />
-      <Item value="Replace`0" priority="2" />
-      <Item value="IsEmpty`0" priority="11" />
-      <Item value="ToLower`0" priority="1" />
-      <Item value="Split`0" priority="0" />
+      <Item value="Replace`0" priority="3" />
+      <Item value="IsEmpty`0" priority="17" />
+      <Item value="ToLower`0" priority="2" />
+      <Item value="Split`0" priority="5" />
+      <Item value="ToPascalCase`0" priority="7" />
+      <Item value="Trim`0" priority="4" />
+      <Item value="ToUpper`0" priority="0" />
+      <Item value="IsEmail`0" priority="0" />
+      <Item value="IsInteger`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.StreamWriter">
       <Item value="Write`0" priority="0" />
@@ -425,7 +515,7 @@
       <Item value="GetResponse`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Console">
-      <Item value="WriteLine`0" priority="5" />
+      <Item value="WriteLine`0" priority="6" />
       <Item value="ReadLine`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@ArtOfTest.WebAii.Core.BrowserType">
@@ -448,36 +538,40 @@
     <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Browser">
       <Item value="NavigateTo`0" priority="1" />
       <Item value="Find" priority="23" />
-      <Item value="Actions" priority="18" />
+      <Item value="Actions" priority="24" />
       <Item value="IsReady`0" priority="0" />
       <Item value="WaitUntilReady`0" priority="4" />
       <Item value="AutoWaitUntilReady" priority="0" />
-      <Item value="GoBack`0" priority="0" />
+      <Item value="GoBack`0" priority="1" />
       <Item value="WaitForUrl`0" priority="0" />
       <Item value="ClientId" priority="5" />
       <Item value="RefreshDomTree`0" priority="2" />
       <Item value="Stop`0" priority="0" />
       <Item value="Close`0" priority="3" />
       <Item value="Window" priority="2" />
+      <Item value="ContainsText`0" priority="0" />
+      <Item value="Url" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Find">
       <Item value="ByName`1" priority="5" />
-      <Item value="ByAttributes`1" priority="2" />
+      <Item value="ByAttributes`1" priority="4" />
       <Item value="ByCustom`0" priority="4" />
       <Item value="AllByCustom`1" priority="4" />
       <Item value="AllByContent`1" priority="1" />
       <Item value="ByContent`1" priority="0" />
       <Item value="ByTagIndex`1" priority="0" />
-      <Item value="AllByAttributes`1" priority="2" />
+      <Item value="AllByAttributes`1" priority="4" />
       <Item value="ByParam`1" priority="0" />
       <Item value="AllByTagName`1" priority="0" />
+      <Item value="ById`1" priority="0" />
+      <Item value="AllByParam`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ArtOfTest.WebAii.Core.Actions">
       <Item value="SetText`0" priority="1" />
       <Item value="InvokeEvent`0" priority="1" />
-      <Item value="Click`0" priority="5" />
+      <Item value="Click`0" priority="9" />
       <Item value="SelectDropDown`0" priority="2" />
-      <Item value="InvokeScript`1" priority="2" />
+      <Item value="InvokeScript`1" priority="3" />
       <Item value="ScrollToVisible`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ArtOfTest.WebAii.ObjectModel.Element">
@@ -494,9 +588,13 @@
       <Item value="FindExpressionUsed" priority="0" />
       <Item value="InnerText" priority="1" />
       <Item value="TagName" priority="0" />
+      <Item value="SetValue`1" priority="0" />
+      <Item value="IdAttributeValue" priority="0" />
+      <Item value="InnerMarkup" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
       <Item value="Now" priority="3" />
+      <Item value="Parse`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="AddDays`0" priority="0" />
@@ -508,7 +606,7 @@
       <Item value="SyncWaitResult" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.ObjectModel.ReadOnlyCollection`1">
-      <Item value="Count" priority="2" />
+      <Item value="Count" priority="4" />
       <Item value="Where`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Threading.Thread">
@@ -535,8 +633,9 @@
       <Item value="GetTypes`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
-      <Item value="Add`0" priority="1" />
-      <Item value="Count" priority="1" />
+      <Item value="Add`0" priority="7" />
+      <Item value="Count" priority="3" />
+      <Item value="AddRange`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Xml.Serialization.XmlSerializer">
       <Item value="Deserialize`0" priority="0" />
@@ -545,11 +644,17 @@
       <Item value="Config" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WebconfigsConfig">
-      <Item value="type" priority="0" />
-      <Item value="starttime" priority="0" />
+      <Item value="type" priority="1" />
+      <Item value="starttime" priority="2" />
       <Item value="intervalSpecified" priority="0" />
-      <Item value="interval" priority="0" />
-      <Item value="checksperday" priority="2" />
+      <Item value="interval" priority="2" />
+      <Item value="checksperday" priority="4" />
+      <Item value="PositionConfigs" priority="1" />
+      <Item value="username" priority="0" />
+      <Item value="password" priority="0" />
+      <Item value="daysback" priority="1" />
+      <Item value="priority" priority="1" />
+      <Item value="Position" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
       <Item value="Single`1" priority="0" />
@@ -580,14 +685,17 @@
       <Item value="SForceDirectories`0" priority="1" />
       <Item value="SCopyFile`0" priority="1" />
       <Item value="SReadFile`0" priority="0" />
+      <Item value="WaitForFile`0" priority="0" />
+      <Item value="SDirectoryExists`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Environment">
-      <Item value="CurrentDirectory" priority="2" />
+      <Item value="CurrentDirectory" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.IO.Path">
-      <Item value="Combine`0" priority="5" />
-      <Item value="GetExtension`0" priority="1" />
+      <Item value="Combine`0" priority="6" />
+      <Item value="GetExtension`0" priority="2" />
       <Item value="GetFileNameWithoutExtension`0" priority="0" />
+      <Item value="ChangeExtension`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Reflection.Assembly">
       <Item value="GetExecutingAssembly`0" priority="0" />
@@ -628,7 +736,9 @@
       <Item value="Find" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
-      <Item value="Add`0" priority="1" />
+      <Item value="Add`0" priority="2" />
+      <Item value="Contains`0" priority="2" />
+      <Item value="Count" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.FileSystemWatcher">
       <Item value="Filter" priority="0" />
@@ -647,12 +757,17 @@
       <Item value="Debt" priority="0" />
       <Item value="Messages" priority="0" />
       <Item value="GetHashCode`0" priority="1" />
+      <Item value="Last" priority="4" />
+      <Item value="First" priority="4" />
+      <Item value="Middle" priority="5" />
+      <Item value="Businessname" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ConsoleGrabit.Models.TaxDocument">
       <Item value="Pages" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Convert">
       <Item value="ToInt32`0" priority="0" />
+      <Item value="ToInt16`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Db4objects.Db4o.Db4oEmbedded">
       <Item value="OpenFile`0" priority="0" />
@@ -712,6 +827,80 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Drawing.Image">
       <Item value="Save`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.SecurityElement">
+      <Item value="Escape`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ConsoleGrabit.NameHelper">
+      <Item value="ParseName`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.VisualStudio.TestTools.UnitTesting.Assert">
+      <Item value="IsTrue`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ConsoleGrabit.PDFToTiff">
+      <Item value="ConvertPdfToTiff`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MODI.IDocument">
+      <Item value="Create`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MODI.Document">
+      <Item value="Create`0" priority="1" />
+      <Item value="OCR`0" priority="0" />
+      <Item value="Images" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@MODI.MiLANGUAGES">
+      <Item value="miLANG_SYSDEFAULT" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MODI.IImage">
+      <Item value="Layout" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MODI.Layout">
+      <Item value="Words" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.ImageOCR">
+      <Item value="Words" priority="0" />
+      <Item value="GetWords`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MODI.IWord">
+      <Item value="Text" priority="1" />
+      <Item value="LineId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MODI.MiDocSearch">
+      <Item value="Initialize`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Regex">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.Models.Config">
+      <Item value="Checkperday" priority="0" />
+      <Item value="Daysback" priority="0" />
+      <Item value="Interval" priority="0" />
+      <Item value="Priority" priority="0" />
+      <Item value="Starttime" priority="0" />
+      <Item value="Positionals" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WebconfigsConfigPositionConfigsPosition">
+      <Item value="name" priority="0" />
+      <Item value="xCoord" priority="0" />
+      <Item value="yCoord" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.Webconfigs">
+      <Item value="Config" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.Webconfigs+ConfigRow">
+      <Item value="type" priority="0" />
+      <Item value="GetPositionConfigsRows`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ConsoleGrabit.Webconfigs+PositionConfigsRow">
+      <Item value="ConfigRow" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WebconfigsConfigPosition">
+      <Item value="name" priority="0" />
+      <Item value="xCoord" priority="0" />
+      <Item value="yCoord" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ArtOfTest.WebAii.Controls.HtmlControls.HtmlInputText">
+      <Item value="SetValue`1" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

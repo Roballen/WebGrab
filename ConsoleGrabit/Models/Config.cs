@@ -5,11 +5,19 @@ using System.Text;
 
 namespace ConsoleGrabit.Models
 {
+    public class Coordinate
+    {
+        public int X { get; set;}
+        public int Y { get; set;}
+    }
+
     public class Config
     {
 
         public Config()
         {
+            _performancetweaks = new Dictionary<string, int>();
+            _positionals = new Dictionary<string, Coordinate>();
             _username = "";
             _starttime = DateTime.Now;
             _priority = 1;
@@ -68,6 +76,21 @@ namespace ConsoleGrabit.Models
             set { _daysback = value; }
         }
 
+        public Dictionary<string, Coordinate> Positionals
+        {
+            get { return _positionals; }
+            set { _positionals = value; }
+        }
+
+
+        public Dictionary<string, int> Performancetweaks
+        {
+            get { return _performancetweaks; }
+            set { _performancetweaks = value; }
+        }
+
+        private Dictionary<string, int> _performancetweaks;
+        private Dictionary<string, Coordinate> _positionals;
         private string _password;
         private string _username;
         private string _county;

@@ -38,3 +38,10 @@ C:\root\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Cecil.FlowAnalysis.dll
 C:\root\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Mono.Cecil.dll
 C:\root\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.CS.xml
 C:\root\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.xml
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.NativeQueries.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.Instrumentation.dll
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.NativeQueries.xml
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Db4objects.Db4o.Instrumentation.xml
+C:\git\dev\WebGrab\ConsoleGrabit\bin\Debug\Interop.MODI.dll
+C:\git\dev\WebGrab\ConsoleGrabit\obj\Debug\Interop.MODI.dll
+C:\git\dev\WebGrab\ConsoleGrabit\obj\Debug\ConsoleGrabit.csproj.ResolveComReference.cache

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRunConfiguration name="Local Test Run" id="e853f04e-52aa-4209-8e06-2165fdd85160" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <Description>This is a default test run configuration for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="WebGrabTests\test_documents\test_doc1.tif" />
+  </Deployment>
+  <TestTypeSpecific />
+</TestRunConfiguration>

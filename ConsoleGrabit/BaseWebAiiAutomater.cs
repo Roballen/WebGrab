@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
+using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 
@@ -75,9 +77,22 @@ namespace ConsoleGrabit
             _find = _main.Find;
         }
 
+        protected string EscapeCharacters(string input)
+        {
+            return SecurityElement.Escape(input);
+        }
+
         protected void SetTextByFieldName( string field, string value )
         {
-            var el = _find.ByName(field);
+            if (field.ToLower().Contains("password"))
+                SetTextByFieldName(field, value, "password");
+            else
+                SetTextByFieldName(field, value, "text");
+        }
+
+        protected void SetTextByFieldName( string field, string value, string type )
+        {
+            var el = _find.ByAttributes("type=" + type,"name=" + field);
             _main.Actions.SetText(el, value);
         }
 
