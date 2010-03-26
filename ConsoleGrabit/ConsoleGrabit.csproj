@@ -85,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressParsing\AddressParsing.cs" />
     <Compile Include="BootStapper.cs" />
     <Compile Include="CountyRules.cs">
       <DependentUpon>CountyRules.xsd</DependentUpon>
@@ -100,6 +101,9 @@
     <Compile Include="Models\Lead.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="NameHelper.cs" />
+    <Compile Include="OCR\BaseOcrParser.cs" />
+    <Compile Include="OCR\Federal.cs" />
+    <Compile Include="OCR\MonroeOcr.cs" />
     <Compile Include="PDFToTiff.cs" />
     <Compile Include="ProcessManager.cs" />
     <Compile Include="Program.cs" />
@@ -124,6 +128,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddressParsing\AddressSuffixes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AddressParsing\AddressSuffixesMaster.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AddressParsing\RequiresUnit.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AddressParsing\SecondaryUnits.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="CountyRules.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

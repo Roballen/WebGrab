@@ -9,6 +9,11 @@ public enum LeadStatus
             Complete, MissingInformation, Error, Duplicate
         }
 
+    public enum LeadType
+    {
+        State, Federal
+    }
+
     public class Lead
     {
         /// <summary>
@@ -34,6 +39,7 @@ public enum LeadStatus
             _first = "";
             _debt = "";
             _businessname = "";
+            _leadtype = LeadType.Federal;
             _status = LeadStatus.MissingInformation;
         }
 
@@ -117,10 +123,15 @@ public enum LeadStatus
             get { return _id; }
             set { _id = value; }
         }
-
+        public LeadType LeadType
+        {
+            get { return _leadtype; }
+            set { _leadtype = value; }
+        }
         #endregion
         #region members
 
+        private LeadType _leadtype;
         private  string _book;
         private string _page;
         private string _id;

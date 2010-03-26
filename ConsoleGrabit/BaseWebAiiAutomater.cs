@@ -6,6 +6,7 @@ using System.Text;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
+using ConsoleGrabit.Models;
 
 namespace ConsoleGrabit
 {
@@ -94,6 +95,32 @@ namespace ConsoleGrabit
         {
             var el = _find.ByAttributes("type=" + type,"name=" + field);
             _main.Actions.SetText(el, value);
+        }
+
+        protected bool RecursiveParentTextSearch(string text, Element e, int levels)
+        {
+            var found = false;
+
+            if (levels == 0)
+                return false;
+
+            try
+            {
+                if (e.InnerText.ToLower().Contains(text.ToLower()))
+                    found = true;
+                
+                if(e.Parent != null && !found)
+                {
+                    levels--;
+                    found = RecursiveParentTextSearch(text, e.Parent, levels);
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error.Message);
+            }
+
+            return found;
         }
 
     }

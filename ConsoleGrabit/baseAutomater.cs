@@ -188,7 +188,7 @@ namespace ConsoleGrabit
             return found;
         }
 
-        protected void PerformOCR(ref Lead lead)
+        protected virtual void PerformOCR(ref Lead lead, LeadType type)
         {
             return;
         }

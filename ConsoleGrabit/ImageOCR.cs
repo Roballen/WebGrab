@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,74 +19,76 @@ namespace ConsoleGrabit
     public class ImageOCR
     {
         private string _filename;
-        private Stream _filestream;
+        protected IList<string> _words = new List<string>();
+        protected Dictionary<string, IList<string>> _lines = new Dictionary<string, IList<string>>();
+        private Document _modi;
 
-        public IList<MyWord> Words
+        public IList<string> Words
         {
             get { return _words; }
             set { _words = value; }
         }
 
-        private IList<MyWord> _words = new List<MyWord>();
-
-
-
-        private Document _modi;
+        public Dictionary<string, IList<string>> Lines
+        {
+            get { return _lines; }
+            set { _lines = value; }
+        }
 
         public ImageOCR(string filename)
         {
-            _modi = new Document();
             _filename = filename;
+            ConvertToTiffIfNeeded();
+            _modi = new Document();
 
-            var lead = new Lead();
+            try
+            {
+                _modi.Create(_filename);
+                _modi.OCR(MiLANGUAGES.miLANG_SYSDEFAULT, true, true);
+                GetWords();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                _modi.Close(false);
+                _modi = null;
+            }
+        }
 
-            _modi.Create(_filename);
-            _modi.OCR(MiLANGUAGES.miLANG_SYSDEFAULT, true, true);
-
+        private void GetLines(string page, string text)
+        {
+            var seps = new string[1]{Environment.NewLine};
+            _lines.Add(page, text.Split(seps,StringSplitOptions.None));
         }
 
         /// <summary>
-        /// Right now, just getting all the words
+        /// Get the words and the lines, we may not need the words later
         /// </summary>
-        /// <param name="filename"></param>
-        /// <returns></returns>
         public void GetWords()
         {
             foreach (IImage image in _modi.Images)
             {
-                
-
                 foreach (IWord word in image.Layout.Words)
                 {
-                    _words.Add(new MyWord(){Text = word.Text, Line = word.LineId});
+                    _words.Add(word.Text);
                 }
+
+                GetLines(image.GetHashCode().ToString(), image.Layout.Text );
             }
         }
 
-        private void ConvertToTiffIfNeeded(string filename)
+        private void ConvertToTiffIfNeeded()
         {
-            if (Path.GetExtension(filename) == "pdf");
+            if (Path.GetExtension(_filename) == "pdf");
             {
                 //save to same location with new extension
-                var newfile = Path.ChangeExtension(filename, "tif");
-                PDFToTiff.ConvertPdfToTiff(filename, newfile);
+                var newfile = Path.ChangeExtension(_filename, "tif");
+                PDFToTiff.ConvertPdfToTiff(_filename, Path.GetDirectoryName(_filename));
                 _filename = newfile;
             }
         }
-
-//        public bool MatchAddress()
-//        {
-//
-//            int resipos = _words["RESIDENCE"];
-//
-//            var addressPattern = new Regex(@"(?<city>[A-Za-z',.\s]+) (?<state>([A-Za-z]{2}|[A-Za-z]{2},))\s*(?<zip>\d{5}(-\d{4})|\d{5})");
-//
-//            var search = new MiDocSearch();
-//            search.Initialize(_modi, addressPattern.ToString(), 1, );
-//
-//
-//        }
-
-
     }
 }

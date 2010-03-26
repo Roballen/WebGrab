@@ -126,7 +126,7 @@ namespace ConsoleGrabit
             }
 
             if (isBusiness)
-                lead.Businessname = name.ToPascalCase();
+                lead.Businessname = name;
             else
             {
                 if (!lead.Last.IsEmpty())

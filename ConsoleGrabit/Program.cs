@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading;
 using ConsoleGrabit.Models;
@@ -72,6 +74,28 @@ namespace ConsoleGrabit
                 }
                 SaveCountyToDb(results);
             }
+        }
+
+        private static void SaveLeadsToExcelFile( CountyPull pull)
+        {
+            var business = new Collection<string>();
+            var residence = new Collection<string>();
+            business.Add("\"name\",\"address\",\"city\",\"state\",\"zip\",\"four\",\"phone\",\"amount\",\"date\",\"type\",");
+            residence.Add("\"first\",\"middle\"\"last\",\"address\",\"city\",\"state\",\"zip\",\"four\",\"type\",\"amount\",\"date\",");
+            foreach (var lead in pull.Leads)
+            {
+                if (lead.Businessname.IsEmpty())
+                {
+                    residence.Add("\" " + lead.First + " \",\"" + lead.Middle + "\"\"" + lead.Last + "\",\"" + lead.Address.Streetaddress1 + "\",\"" + lead.Address.City + "\",\"" + lead.Address.State + "\",\"" + lead.Address.Zip + "\",\"" + lead.LeadType + "\",\"" + lead.Debt + "\",\"" + lead.Recordeddate + "\",");
+                }
+                else
+                {
+                    business.Add("\" " + lead.Businessname + " \",\" " + lead.Address.Streetaddress1 + " \",\" " + lead.Address.City + " \",\" " + lead.Address.State + " \",\" " + lead.Address.Zip + " \",\"\",\" " + "" + " \",\" " + lead.Debt + " \",\" " + lead.Recordeddate + " \",\" " + lead.LeadType+ " \",");
+                }
+            }
+
+            FileTools.SSaveArrayToFile(Path.Combine(Properties.Settings.Default.exceloutput, pull.County + "_" + pull.Time + "_buiness.csv"  ), business);
+            FileTools.SSaveArrayToFile(Path.Combine(Properties.Settings.Default.exceloutput, pull.County + "_" + pull.Time + "_residence.csv"), residence);
         }
 
         private static string GetConfiglocation(string[] args)

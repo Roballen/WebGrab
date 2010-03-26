@@ -7,10 +7,10 @@
     <PerformanceTweak name="imagewaitafterload" seconds="8" />
     <PerformanceTweak name="textdialogueload" seconds="1" />
   </Config>
-  <Config type="MonroeCounty" starttime="06:00:00" checksperday="1" daysback ="5" username="jsmithee" password="11800Ridge" interval="4" priority="1" >
+  <Config type="MonroeCounty" starttime="06:00:00" checksperday="1" daysback ="3" username="jsmithee" password="11800Ridge" interval="4" priority="1" >
     <Position name="SavePdf" xCoord="525" yCoord="250"></Position>
     <PerformanceTweak name="imageviewerload" seconds="30" />
-    <PerformanceTweak name="imagewaitafterload" seconds="8" />
+    <PerformanceTweak name="imagewaitafterload" seconds="6" />
     <PerformanceTweak name="textdialogueload" seconds="1" />
   </Config>
   <Config type="ColoradoSecretaryOfState" starttime="06:00:00" checksperday="0" daysback ="5" username="2020mmj" password="coacctcode" interval="4" priority="1" />

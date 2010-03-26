@@ -37,18 +37,6 @@ namespace ConsoleGrabit.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Documents and Settings\\Rob Allen\\Application Data\\Sun\\Java\\Deployment\\cache\\")]
-        public string javacachedirectory {
-            get {
-                return ((string)(this["javacachedirectory"]));
-            }
-            set {
-                this["javacachedirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("c:\\pdf\\")]
         public string pdfstore {
             get {
@@ -80,6 +68,42 @@ namespace ConsoleGrabit.Properties {
             }
             set {
                 this["downloadpath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\tellutwurp\\AppData\\LocalLow\\Sun\\Java\\Deployment\\cache")]
+        public string javacachedirectory {
+            get {
+                return ((string)(this["javacachedirectory"]));
+            }
+            set {
+                this["javacachedirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Adultpdf\\pdftotiff\\")]
+        public string pdftotiff {
+            get {
+                return ((string)(this["pdftotiff"]));
+            }
+            set {
+                this["pdftotiff"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\")]
+        public string exceloutput {
+            get {
+                return ((string)(this["exceloutput"]));
+            }
+            set {
+                this["exceloutput"] = value;
             }
         }
     }

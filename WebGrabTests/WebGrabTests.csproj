@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8B49339E-68ED-4F08-8DAD-5367A4F89D0C}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -90,7 +90,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressParsingTest.cs" />
     <Compile Include="ImageOCRTest.cs" />
+    <Compile Include="MonroeOcrTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NameParsingTests.cs" />
   </ItemGroup>
@@ -105,6 +107,9 @@
       <Project>{3588A611-DA49-45D6-8EE0-3D8A5FFC4C2D}</Project>
       <Name>ConsoleGrabit</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\ConsoleGrabit.accessor" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

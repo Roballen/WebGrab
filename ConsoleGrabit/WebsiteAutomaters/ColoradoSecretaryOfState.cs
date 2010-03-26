@@ -158,7 +158,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                         if (GetDocument(imagelink, ref lead))
                         {
                             lead.Document.Disklocation = _imagelocation;
-                            PerformOCR(ref lead);
+                            PerformOCR(ref lead,LeadType.Federal);
                         }
                     }
 

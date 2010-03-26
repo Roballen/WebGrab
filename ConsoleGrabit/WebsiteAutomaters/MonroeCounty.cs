@@ -10,6 +10,8 @@ using ArtOfTest.WebAii.Silverlight.UI;
 using ArtOfTest.WebAii.Win32.Dialogs;
 using ConsoleGrabit.Interfaces;
 using ConsoleGrabit.Models;
+using ConsoleGrabit.OCR;
+using Utilities;
 using Message = ConsoleGrabit.Models.Message;
 
 namespace ConsoleGrabit.WebsiteAutomaters
@@ -119,6 +121,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
             //IList<Element> images = _find.AllByAttributes("tag=img", "title=View Image");
             var first = true;
+            var type = LeadType.State;
             foreach (var element in images)
             {
 
@@ -131,6 +134,8 @@ namespace ConsoleGrabit.WebsiteAutomaters
                     _main.Actions.Click(element);
                     if (first) //wait for image viewer to load, slow first time
                     {
+                        type = RecursiveParentTextSearch("FEDERAL TAX", element, 5) ? LeadType.Federal : LeadType.State; 
+
                         Thread.Sleep(1000 * _config.Performancetweaks["imageviewerload"]);
                         first = false;
                     }
@@ -169,11 +174,12 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
                     
 
-                    var path = System.IO.Path.Combine(Properties.Settings.Default.pdfstore, rand.Next(9999999) + "_monroe.tif");
+                    var path = System.IO.Path.Combine(Properties.Settings.Default.pdfstore, rand.Next(9999999) + "_monroe" + (type == LeadType.Federal ? "_federal" : "_state") +  ".pdf");
+                    lead.Document.Disklocation = path;
 
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Space);
                     Thread.Sleep(1000 * _config.Performancetweaks["textdialogueload"]);
-                    _manager.Desktop.KeyBoard.TypeText(path, 100);
+                    _manager.Desktop.KeyBoard.TypeText(path, 10);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Tab);
                     _manager.Desktop.KeyBoard.KeyPress(Keys.Enter);
@@ -205,10 +211,9 @@ namespace ConsoleGrabit.WebsiteAutomaters
 //                        continue;
 //                    }
 
-                    if (GetDocument(element, ref lead))
+                    if (!lead.Document.Disklocation.IsEmpty())
                     {
-                        lead.Document.Disklocation = _imagelocation;
-                        PerformOCR(ref lead);
+                        PerformOCR(ref lead, type);
                     }
                 }
                 catch (Exception ex)
@@ -219,6 +224,20 @@ namespace ConsoleGrabit.WebsiteAutomaters
 
             }
 
+        }
+
+        protected override void PerformOCR(ref Lead lead, LeadType type)
+        {
+            if (type == LeadType.Federal)
+            {
+                var fed = new Federal(lead.Document.Disklocation, "Monroe");
+                lead = fed.GetLeadFromOcr();
+            }
+            else
+            {
+                var state = new MonroeOcr(lead.Document.Disklocation,"Monroe");
+                lead = state.GetLeadFromOcr();
+            }
         }
 
         private bool GetDocument(Element element, ref Lead lead)

@@ -102,7 +102,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
             //_main = _manager.ActiveBrowser;
             //first scroll through and try to get the data from the ViewDetails pop up
             IList<Element> details = _find.AllByCustom(e => e.Content.Contains("Detail.asp"));
-
+            var first = true;
             foreach (var element in details)
             {
                 var lead = new Lead();
@@ -133,11 +133,13 @@ namespace ConsoleGrabit.WebsiteAutomaters
                         continue;
                     }
 
-                    if (GetDocument(element, ref lead))
+                    if (GetDocument(element, ref lead, first))
                     {
                         lead.Document.Disklocation = _imagelocation;
-                        PerformOCR(ref lead);
+                        PerformOCR(ref lead,LeadType.State);
                     }
+
+                    if (first) first = false;
                 }
                 catch (Exception ex)
                 {
@@ -242,7 +244,7 @@ namespace ConsoleGrabit.WebsiteAutomaters
                 
                 if (lead.Document.Pages > 0)
                 {
-                    //RemoveListener();
+                    //RemoveListener=
                     //try and use the save button
                     //AddListener(Properties.Settings.Default.downloadpath);
                     int x = _manager.ActiveBrowser.Window.Location.X + _config.Positionals["SavePdf"].X;
